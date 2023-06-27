@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-s.png'
 import './index.scss'
+import Logo from './Logo';
 
 const Home = () => {
 
@@ -65,6 +66,7 @@ const Home = () => {
                 </h2>
                 <Link to="/contant" className="flat-button">CONTACT ME</Link>
             </div>
+            <Logo />
         </div>
     );
 
