@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
 
 const Contact = () => {
