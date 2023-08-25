@@ -11,19 +11,31 @@ const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
 
-    const nameArray = ['l', 'o', 'b', 'o', 'd', 'a', 'n']
+    const nameArray = ['h', 'a', 'r', 'b', 'a', 'n', 'd', 'a']
     const jobArray = [
-    'w',
-    'e',
-    'b',
-    ' ',
-    'd',
-    'e',
-    'v',
-    'e',
-    'l',
+    'C',    //computer systems engineer
     'o',
+    'm',
     'p',
+    'u',
+    't',
+    'e',
+    'r',
+    ' ',
+    'S',
+    'y',
+    's',
+    't',
+    'e',
+    'm',
+    's',
+    ' ',
+    'E',
+    'n',
+    'g',
+    'i',
+    'n',
+    'e',
     'e',
     'r',
     '.',
@@ -60,13 +72,13 @@ const Home = () => {
                     <AnimatedLetters
                         letterClass={letterClass}
                         strArray={jobArray}
-                        idx={22}
+                        idx={10}
                     />
                 </h1>
                 <h2>
-                    Frontend Developer
+                    Computer Systems Engineer | Full-Stack Developer
                 </h2>
-                <Link to="/contant" className="flat-button">CONTACT ME</Link>
+                {/* <Link to="/contant" className="flat-button">CONTACT ME</Link> */}
             </div>
             <Logo />
         </div>
