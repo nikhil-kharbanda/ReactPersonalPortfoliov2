@@ -1,0 +1,34 @@
+.project-title {
+    position: fixed;
+    margin-top: -15%;
+}
+
+.item {
+    min-height: 40rem;
+    min-width: 50rem;
+    padding: 40px;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    pointer-events: none;
+}
+
+.inner-project-display {
+    display: flex;
+}
+
+.carousel {
+    cursor: grab;
+    overflow: hidden;
+}
+
+.project-display {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    margin-top: 10%;
+    margin-left: 5%;
+}
