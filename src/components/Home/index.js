@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../assets/images/logo-s.png'
+import LogoTitle from '../../assets/images/logo-n.png'
 import './index.scss'
 import Logo from './Logo';
 import Loader from 'react-loaders';
@@ -13,7 +13,7 @@ const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
 
-    const nameArray = ['h', 'a', 'r', 'b', 'a', 'n', 'd', 'a']
+    const nameArray = ['i', 'k', 'h', 'i', 'l', ' ', 'K','h','a','r','b','a','n','d','a']
     const jobArray1 = [
         'C',    //computer systems engineer
         'o',
@@ -116,7 +116,7 @@ const Home = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <div className='resume-btn'>Download .pdf file</div>
+                        <div className='resume-btn'>DOWNLOAD MY RESUME</div>
                     </a>
                 </div>
                 <Logo />

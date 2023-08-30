@@ -4,11 +4,8 @@ import Loader from 'react-loaders'
 import './index.scss'
 import styled from 'styled-components'
 
-
 import { Projects } from '../data/ProjectData'
-
 import { motion } from 'framer-motion'
-
 import Card from '../subComponents/Card'
 
 const transitionEffect = {
@@ -93,11 +90,9 @@ const Proj = () => {
                       data={wd}
                     />
                     <a target="blank" href={`${wd.demo}`}/> 
-
                   </motion.div>
                 )
               })}
-
             </motion.div>
           </motion.div>
         </div>

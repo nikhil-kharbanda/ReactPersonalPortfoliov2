@@ -12,7 +12,7 @@ export const Projects = [
     {
       id: 2,
       name: 'DevSpace',
-      description: '',
+      description: 'For the final project in the University of Torontos Full-Stack Developer program, my group and I created a website where developers from all over the world can connect and share their experties on development projects based on specializations. Users can sign-up to use DevSpace and connect with developers around the world by selecing a channel they are interested in',
       image: 'https://user-images.githubusercontent.com/87992263/144091632-b77c4f89-1f20-4e38-bfc6-cef2d4e6f4d1.png',
       demo: 'https://devspace-jnmst.herokuapp.com/',
       github: 'https://github.com/nikhil-kharbanda/UofT_Chatbox'
