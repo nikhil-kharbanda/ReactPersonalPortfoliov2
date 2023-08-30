@@ -9,25 +9,7 @@ import { Projects } from '../data/ProjectData'
 
 import { motion } from 'framer-motion'
 
-import Card from './Card'
-
-const Box = styled.div`
-  background-color: ${(props) => props.theme.body};
-  height:725vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-`
-
-const Main = styled(motion.ul)`
-position: fixed;
-top: 12rem;
-left:calc(10rem + 15vw);
-height: 40vh;
-display: flex;
-
-color:white;
-`
+import Card from '../subComponents/Card'
 
 const transitionEffect = {
   hidden: { opacity: 0 },
@@ -39,7 +21,6 @@ const transitionEffect = {
       duration: 0.5
     }
   }
-
 }
 
 const Proj = () => {
@@ -95,21 +76,24 @@ const Proj = () => {
               idx={10}
             />
           </h1>
+          <h2>Hold and drag the following full-stack development cards to see some of my sample projects. Links to the demo site and the Git repo's can be found at the bottom.</h2>
         </div>
+
+
 
         {/* TODO: CARDS WITH PREV PROJECTS */}
 
         <div className='project-display'>
-          <motion.div ref={carousel} className='carousel' whileTap={{ cursor: "grabbing" }}>
-            <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className='inner-project-display'>
-
-              {/* <motion.div drag="x"  className='inner-project-display'> */}
+          <motion.div ref={carousel} className='carousel' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }} variants={transitionEffect}>
+            <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className='inner-project-display' variants={transitionEffect}>
               {Projects.map(wd => {
                 return (
                   <motion.div className='item' key={wd.id}>
                     <Card key={wd.id}
                       data={wd}
                     />
+                    <a target="blank" href={`${wd.demo}`}/> 
+
                   </motion.div>
                 )
               })}

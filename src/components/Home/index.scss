@@ -70,4 +70,23 @@
             color: #333;
         }
     }
+    .resume-btn {
+        color: #ffd700;
+        font-size: 13px;
+        font-size: 400;
+        letter-spacing: 4px;
+        font-family: 'sans-serif';
+        text-decoration: none;
+        padding: 10px 10px;
+        border: 1px solid #ffd700;
+        margin-top: 25px;
+        float: left;
+        animation: fadeIn 1s 1.8s backwards;
+        white-space: nowrap;
+        margin-left: 50px;
+        &:hover {
+            background: #ffd700;
+            color: #333;
+        }
+    }
 }

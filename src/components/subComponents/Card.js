@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion'
 import React from 'react'
-import { BrowserRouter, Switch, Route, Link as Link1, NavLink } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -10,18 +10,18 @@ import { Github } from './AllSvgs'
 
 
 const Box = styled(motion.li)`
-    width: 50rem;
-    height: 50vh;
+    width: 40rem;
+    height: 40vh;
     background-color: #ffd700;
     color:${props => props.theme.body};
-    padding: 1.5rem 2rem;
-    margin-right: 8rem;
+    padding: 0.5rem 3rem;
+    margin-right: -25rem;
     border-radius: 50px 0 50px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid ${props => props.theme.body};
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 
     &:hover{
         background-color: #fa0000;
@@ -57,16 +57,16 @@ justify-content: space-between;
 `
 
 const Link = styled.div`
-background-color: ${props => props.theme.body};
-color: ${props => props.theme.text};
+background-color: #fa0000;
+color: #ffffff;
 text-decoration: none;
 padding:0.5rem calc(2rem + 2vw);
 border-radius: 0 0 0 50px;
 font-size:calc(0.5em + 0.5vw);
 
 ${Box}:hover &{
-    background-color: ${props => props.theme.text};
-    color: ${props => props.theme.body};
+    background-color: #ffd700;
+    color: #ffffff;
 `
 
 const Git = styled.div`
