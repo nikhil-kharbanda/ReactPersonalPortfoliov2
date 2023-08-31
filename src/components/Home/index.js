@@ -14,62 +14,8 @@ const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
 
     const nameArray = ['i', 'k', 'h', 'i', 'l', ' ', 'K','h','a','r','b','a','n','d','a']
-    const jobArray1 = [
-        'C',    //computer systems engineer
-        'o',
-        'm',
-        'p',
-        'u',
-        't',
-        'e',
-        'r',
-        ' ',
-        'S',
-        'y',
-        's',
-        't',
-        'e',
-        'm',
-        's',
-        ' ',
-        'E',
-        'n',
-        'g',
-        'i',
-        'n',
-        'e',
-        'e',
-        'r',
-        '.',
-    ]
-
     const Job1 = 'Computer Systems Engineer'
-
-    const jobArray2 =
-        [
-            'F',            //Full-stack Developer
-            'u',
-            'l',
-            'l',
-            '-',
-            's',
-            't',
-            'a',
-            'c',
-            'k',
-            ' ',
-            'D',
-            'e',
-            'v',
-            'e',
-            'l',
-            'o',
-            'p',
-            'e',
-            'r',
-            '.'
-        ]
-        const Job2 = 'Full-Stack Developer'
+    const Job2 = 'Full-Stack Developer'
 
     useEffect(() => {
         let timeout;

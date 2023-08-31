@@ -1,19 +1,11 @@
-import { useLayoutEffect, useRef } from 'react';
-import LogoS from '../../../assets/images/logo-s.png';
 import './index.scss';
 import { motion } from 'framer-motion'
-import styled from 'styled-components'
 
 import Me from '../../../assets/images/bitmoji.png'
 
 
 
 const Logo = () => {
-
-  const bgRef = useRef();
-  const outlineLogoRef = useRef();
-  const solidLogoRef = useRef();
-
   return (
     <>
       <motion.div className='logo-container'>
