@@ -88,14 +88,12 @@ const Proj = () => {
                     <Card key={wd.id}
                       data={wd}
                     />
-                    <a target="blank" href={`${wd.demo}`}/> 
                   </motion.div>
                 )
               })}
             </motion.div>
           </motion.div>
         </div>
-
       </div>
       <Loader type="pacman" />
 
