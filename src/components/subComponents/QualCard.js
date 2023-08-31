@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { motion } from 'framer-motion'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Box = styled(motion(NavLink))`
+const Box = styled(motion.a)`
   width: calc(10rem + 15vw);
   text-decoration: none;
-  height: 20rem;
-  padding: 1rem;
+  height: 30rem;
+  padding: 0.5rem;
 
-  color: ${(props) => props.theme.text};
+  color: white;
   backdrop-filter: blur(2px);
-  border: 4px solid ${(props) => props.theme.text};
+  border: 4px solid #ffd700;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
@@ -21,8 +20,6 @@ const Box = styled(motion(NavLink))`
   z-index: 5;
 
   &:hover {
-    color: ${(props) => props.theme.body};
-    background-color: ${(props) => props.theme.text};
     transform: scale(1.1);
     transition: all 0.3s ease;
   }
@@ -33,14 +30,16 @@ const Container = styled(motion.div)``
 const Image = styled.div`
   background-image: ${(props) => `url(${props.img})`};
   width: 100%;
-  height: 60%;
-
+  height: 50%;
+  
   background-size: cover;
   border: 1px solid transparent;
   background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${Box}:hover & {
-    border: 1px solid ${(props) => props.theme.body};
   }
 `
 
@@ -50,6 +49,7 @@ const Title = styled.h3`
   padding-top: 1rem;
   font-family: cursive, sans-serif;
   font-weight: 700;
+  font-size: 15px;
   border-bottom: 1px solid ${(props) => props.theme.text};
 
   ${Box}:hover & {
@@ -59,6 +59,7 @@ const Title = styled.h3`
 
 const Description = styled.div`
   padding: 0.5rem 0;
+  font-size: 18px;
 `
 
 const cardAnimation = {
@@ -78,7 +79,7 @@ const QualComponents = (props) => {
   const { name, description, imgSrc, link } = props.proj
   return (
     <Container variants={cardAnimation}>
-    <Box target="_blank" to={{ pathname: link }} >
+    <Box target="blank" href={`${link}`}>
       <Image img={imgSrc} />
       <Title>{name}</Title>
       <Description>
