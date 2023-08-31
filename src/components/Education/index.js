@@ -23,10 +23,6 @@ const Education = () => {
   const carousel = useRef();
 
   useEffect(() => {
-    console.log("carousel = ", carousel.current.height)
-    console.log("scrollHeight = ", carousel.current.scrollHeight);
-    console.log("offsetHeight = ", carousel.current.offsetHeight);
-    console.log("carousel.current.scrollHeight - carousel.current.offsetHeight = ", carousel.current.scrollHeight - carousel.current.offsetHeight)
     setHeight(carousel.current.scrollHeight - carousel.current.offsetHeight)
   }, []);
 
