@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import './index.scss'
-import { Qual } from '../data/QualData'
-import QualComponents from '../subComponents/QualCard'
+import { EngProjData } from '../data/EngProjData'
+import EngProjCard from '../subComponents/EngProjCard'
 import { motion } from 'framer-motion'
 
 const Education = () => {
@@ -29,7 +29,7 @@ const Education = () => {
   return (
     <>
       <div className="container proj-page">
-        <div className="text-zone education-title" >
+        <div className="text-zone project-title" >
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
@@ -41,12 +41,10 @@ const Education = () => {
           </div>
           {/* TODO: Add education cards */}
           <div className='box'>
-            
             <div ref={carousel} className='center' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
-              {/* <motion.div drag="y" dragConstraints={{top: 10, bottom: -height - 150}} className='grid'> */}
               <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='grid'>
-                {Qual.map((Proj) => {
-                  return <QualComponents key={Proj.id} proj={Proj} />
+                {EngProjData.map((Proj) => {
+                  return <EngProjCard key={Proj.id} proj={Proj} />
                 })}
               </motion.div>
           </div>
