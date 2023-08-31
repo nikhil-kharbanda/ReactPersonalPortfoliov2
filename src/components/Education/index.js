@@ -44,7 +44,7 @@ const Education = () => {
             
             <div ref={carousel} className='center' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
               {/* <motion.div drag="y" dragConstraints={{top: 10, bottom: -height - 150}} className='grid'> */}
-              <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='grid'>
+              <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEdu'>
                 {Qual.map((Proj) => {
                   return <QualComponents key={Proj.id} proj={Proj} />
                 })}
