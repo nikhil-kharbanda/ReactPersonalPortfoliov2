@@ -1,4 +1,4 @@
-export const Projects = [
+export const Proj = [
     {
       id: 1,
       name: 'NFC Collect',

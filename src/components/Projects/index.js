@@ -3,7 +3,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import './index.scss'
 
-import { Projects } from '../data/ProjectData'
+import { Proj } from '../data/ProjectData'
 import { motion } from 'framer-motion'
 import Card from '../subComponents/Card'
 
@@ -19,7 +19,7 @@ const transitionEffect = {
   }
 }
 
-const Proj = () => {
+const Projects = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
   const [width, setWidth] = useState(0);
@@ -82,7 +82,7 @@ const Proj = () => {
         <div className='project-display'>
           <motion.div ref={carousel} className='carousel' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }} variants={transitionEffect}>
             <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className='inner-project-display' variants={transitionEffect}>
-              {Projects.map(wd => {
+              {Proj.map(wd => {
                 return (
                   <motion.div className='item' key={wd.id}>
                     <Card key={wd.id}
@@ -102,4 +102,4 @@ const Proj = () => {
   )
 }
 
-export default Proj
+export default Projects
