@@ -1,6 +1,5 @@
 import './index.scss';
 import { motion } from 'framer-motion'
-
 import Me from '../../../assets/images/Bitmoji.png'
 
 
