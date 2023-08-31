@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 const Box = styled(motion.a)`
-  width: calc(10rem + 15vw);
+  width: calc(12rem + 15vw);
   text-decoration: none;
-  height: 30rem;
+  height: 25rem;
   padding: 0.5rem;
 
   color: white;
