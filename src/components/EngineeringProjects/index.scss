@@ -1,3 +1,23 @@
-.engineering-title {
-    margin-top: -12%;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+    grid-gap: calc(1rem + 2vw);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15rem;
+    margin-top: 10%;
+    margin-left: -30%;
+    margin-right: -40%;
+}
+
+.box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-bottom: 5rem;
+    margin-top: -5%;
 }
