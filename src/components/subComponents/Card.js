@@ -56,13 +56,13 @@ display: flex;
 justify-content: space-between;
 `
 
-const Link = styled.div`
-background-color: #fa0000;
+const Link = styled.a`
+background-color: #ffffff;
 color: #ffffff;
 text-decoration: none;
 padding:0.5rem calc(2rem + 2vw);
 border-radius: 0 0 0 50px;
-font-size:calc(0.5em + 0.5vw);
+font-size:calc(0.7em + 0.5vw);
 
 ${Box}:hover &{
     background-color: #ffd700;

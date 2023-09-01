@@ -72,7 +72,8 @@ const Projects = () => {
               idx={10}
             />
           </h1>
-          <h2>Hold and drag the following full-stack development cards to see some of my sample projects. Links to the demo site and the Git repo's can be found at the bottom.</h2>
+          <h2 className='proj-instruct'>Here, you can see a few samples of my full-stack development work. At the bottom of each card, you can see the demo of the site, and the Git repo</h2>
+          <h2 className='proj-instruct'>To scroll through the cards, drag within the red box.</h2>
         </div>
 
 
