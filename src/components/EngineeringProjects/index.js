@@ -42,7 +42,7 @@ const Education = () => {
           {/* TODO: Add education cards */}
           <div className='box'>
             <div ref={carousel} className='center' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
-              <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='grid'>
+              <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEngProjs'>
                 {EngProjData.map((Proj) => {
                   return <EngProjCard key={Proj.id} proj={Proj} />
                 })}
