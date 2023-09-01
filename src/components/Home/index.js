@@ -67,7 +67,7 @@ const Home = () => {
                 </div>
                 <Logo />
             </div>
-            <Loader type='ball-grid-pulse' />
+            <Loader type='pacman' />
         </>
     );
 

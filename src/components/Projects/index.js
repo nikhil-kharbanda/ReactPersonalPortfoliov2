@@ -96,7 +96,7 @@ const Projects = () => {
           </motion.div>
         </div>
       </div>
-      <Loader type="ball-grid-pulse" />
+      <Loader type="pacman" />
 
     </>
 
