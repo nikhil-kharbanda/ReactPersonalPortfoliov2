@@ -1,9 +1,24 @@
-.project-title {
-    position: fixed;
-    margin-top: -12%;
+.container-devProj {
+    width: 100%;
+    will-change: contents;
+    height: 100%;
+    min-height: 566px;
+    position: absolute;
+    opacity: 0;
+    top: 5%;
+    margin: 0 auto;
+    z-index: 1;
+    transform-style: preserve-3d;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
 }
 
-.item {
+.devproj-title {
+    position: fixed;
+    margin-top: -15%;
+}
+
+.item-devproj {
     min-height: 40rem;
     min-width: 50rem;
     padding: 40px;
@@ -17,11 +32,11 @@
     pointer-events: none;
 }
 
-.inner-project-display {
+.inner-project-display-devproj {
     display: flex;
 }
 
-.carousel {
+.carousel-devproj {
     cursor: grab;
     overflow: hidden;
     margin-top: 5%;
@@ -29,7 +44,7 @@
     margin-left: 85px;
 }
 
-.project-display {
+.devproj-display {
     width: 100%;
     display: flex;
     position: fixed;
@@ -37,7 +52,7 @@
     margin-left: 0%;
 }
 
-.proj-instruct {
+.devproj-instruct {
     h2 {
         font-size: 18px;
     }

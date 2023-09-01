@@ -28,7 +28,7 @@ const Education = () => {
 
   return (
     <>
-      <div className="container proj-page">
+      <div className="container-edu edu-page">
         <div className="text-zone education-title" >
           <h1>
             <AnimatedLetters
@@ -40,10 +40,8 @@ const Education = () => {
           </h1>
           </div>
           {/* TODO: Add education cards */}
-          <div className='box'>
-            
-            <div ref={carousel} className='center' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
-              {/* <motion.div drag="y" dragConstraints={{top: 10, bottom: -height - 150}} className='grid'> */}
+          <div className='box-edu'>
+            <div ref={carousel} className='center-edu' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
               <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEdu'>
                 {Qual.map((Proj) => {
                   return <QualComponents key={Proj.id} proj={Proj} />
