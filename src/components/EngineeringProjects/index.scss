@@ -1,4 +1,4 @@
-.container-proj {
+.container-engproj {
     width: 100%;
     will-change: contents;
     height: 100%;
@@ -13,12 +13,12 @@
     animation-delay: 1s;
 }
 
-.project-title {
+.engproject-title {
     position: fixed;
     margin-top: -17%;
 }
 
-.box-proj {
+.box-engproj {
     width: 100%;
     height: auto;
     position: relative;
@@ -26,7 +26,7 @@
     margin-top: -5%;
 }
 
-.center-proj {
+.center-engproj {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@
     margin-right: -40%;
 }
 
-.box {
+.box-engproj {
     width: 100%;
     height: auto;
     position: relative;

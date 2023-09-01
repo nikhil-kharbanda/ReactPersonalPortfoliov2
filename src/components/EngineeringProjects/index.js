@@ -28,8 +28,8 @@ const Education = () => {
 
   return (
     <>
-      <div className="container-proj proj-page">
-        <div className="text-zone project-title" >
+      <div className="container-engproj engproj-page">
+        <div className="text-zone engproject-title" >
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
@@ -40,8 +40,8 @@ const Education = () => {
           </h1>
           </div>
           {/* TODO: Add education cards */}
-          <div className='box-proj'>
-            <div ref={carousel} className='center-proj' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
+          <div className='box-engproj'>
+            <div ref={carousel} className='center-engproj' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
               <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEngProjs'>
                 {EngProjData.map((Proj) => {
                   return <EngProjCard key={Proj.id} proj={Proj} />
