@@ -28,20 +28,20 @@ const Education = () => {
 
   return (
     <>
-      <div className="container proj-page">
+      <div className="container-proj proj-page">
         <div className="text-zone project-title" >
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
               strArray={[
-                'E', 'd', 'u', 'c', 'a', 't', 'i', 'o', 'n']}
+                'E','n','g','i','n','e','e','r','i','n','g', ' ','P','r','o','j','e','c','t','s']}
               idx={10}
             />
           </h1>
           </div>
           {/* TODO: Add education cards */}
-          <div className='box'>
-            <div ref={carousel} className='center' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
+          <div className='box-proj'>
+            <div ref={carousel} className='center-proj' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
               <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEngProjs'>
                 {EngProjData.map((Proj) => {
                   return <EngProjCard key={Proj.id} proj={Proj} />
