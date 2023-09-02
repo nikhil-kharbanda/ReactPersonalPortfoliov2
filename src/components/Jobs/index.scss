@@ -1,4 +1,4 @@
-.container-engproj {
+.container-jobs {
     width: 100%;
     will-change: contents;
     height: 100%;
@@ -13,12 +13,12 @@
     animation-delay: 1s;
 }
 
-.engproject-title {
+.jobs-title {
     position: fixed;
     margin-top: -17%;
 }
 
-.box-engproj {
+.box-jobs {
     width: 100%;
     height: auto;
     position: relative;
@@ -26,7 +26,7 @@
     margin-top: -5%;
 }
 
-.center-engproj {
+.center-jobs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,9 +35,9 @@
     margin-right: -40%;
 }
 
-.gridEngProjs {
+.gridJobs {
     display: grid;
-    grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+    grid-template-columns: repeat(3, minmax(calc(10rem + 15vw), 1fr));
     grid-gap: calc(1rem + 2vw);
 }
 
@@ -48,12 +48,4 @@
     margin-top: 15%;
     margin-left: -30%;
     margin-right: -40%;
-}
-
-.box-engproj {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding-bottom: 5rem;
-    margin-top: -5%;
 }
