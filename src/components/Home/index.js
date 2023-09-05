@@ -5,7 +5,7 @@ import LogoTitle from '../../assets/images/logo-n.png'
 import './index.scss'
 import Logo from './Logo';
 import Loader from 'react-loaders';
-import Resume from '../../assets/docs/NikhilKharbanda-Resume.pdf'
+import Resume from '../../assets/docs/Nikhil_Kharbanda-Resume.pdf'
 import { Typewriter } from 'react-simple-typewriter'
 
 const Home = () => {
