@@ -86,6 +86,11 @@
                 content: 'ENGINEERING';
             }
         }
+        a.jobs-link {
+            &:after {
+                content: 'PAST JOBS';
+            }
+        }
         a.contact-link {
             &:after {
                 content: 'CONTACT';
