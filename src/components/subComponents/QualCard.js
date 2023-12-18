@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const Box = styled(motion.a)`
   width: calc(12rem + 15vw);
   text-decoration: none;
-  height: 25rem;
+  height: 27rem;
   padding: 0.5rem;
 
   color: white;
@@ -30,7 +30,7 @@ const Container = styled(motion.div)``
 const Image = styled.div`
   background-image: ${(props) => `url(${props.img})`};
   width: 100%;
-  height: 50%;
+  height: 40%;
   
   background-size: cover;
   border: 1px solid transparent;
