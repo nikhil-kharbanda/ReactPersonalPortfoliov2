@@ -3,7 +3,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import './index.scss'
 import { Qual } from '../data/QualData'
-import QualComponents from '../subComponents/QualCard'
+import QualComponents from '../subComponents/EduCard'
 import { motion } from 'framer-motion'
 
 const Education = () => {

@@ -5,7 +5,7 @@ import './index.scss'
 
 import { Proj } from '../data/ProjectData'
 import { motion } from 'framer-motion'
-import Card from '../subComponents/Card'
+import Card from '../subComponents/DevCard'
 
 const transitionEffect = {
   hidden: { opacity: 0 },
