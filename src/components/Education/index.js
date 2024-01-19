@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import './index.scss'
-import { Qual } from '../data/QualData'
-import QualComponents from '../subComponents/EduCard'
+import { Edu } from '../data/EduData'
+import EduComponents from '../subComponents/EduCard'
 import { motion } from 'framer-motion'
 
 const Education = () => {
@@ -43,8 +43,8 @@ const Education = () => {
           <div className='box-edu'>
             <div ref={carousel} className='center-edu' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
               <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEdu'>
-                {Qual.map((Proj) => {
-                  return <QualComponents key={Proj.id} proj={Proj} />
+                {Edu.map((Proj) => {
+                  return <EduComponents key={Proj.id} proj={Proj} />
                 })}
               </motion.div>
           </div>

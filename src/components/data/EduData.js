@@ -4,7 +4,7 @@ import DatabaseCertif from '../../assets/docs/Certifs/Intro_To_Databases_Certif_
 import AzureCertif from '../../assets/docs/Certifs/MicrosoftAzure.pdf'
 
 
-export const Qual = [
+export const Edu = [
   {
     id: 1,
     name: 'Computer Systems Engieering Graduate',
