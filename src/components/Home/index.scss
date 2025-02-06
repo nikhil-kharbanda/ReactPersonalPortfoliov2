@@ -7,7 +7,7 @@
         width: 40%;
         max-height: 90%;
     }
-    h1 {
+    .OpenerLines {          
         color: #fff;
         font-size: 53px;
         margin: 0;
@@ -20,7 +20,7 @@
             font-size: 18px;
             position: absolute;
             margin-top: -40px;
-            left: 15px;
+            left: 0px;
             opacity: 0.6;
         }
         &::after {
@@ -30,7 +30,7 @@
             font-size: 18px;
             position: absolute;
             margin-top: 18px;
-            margin-left: 20px;
+            margin-left: 0px;
             animation: fadeIn 1s 1.7s backwards;
             opacity: 0.6;
         }
@@ -43,6 +43,7 @@
             animation-delay: 1.4s;
         }
     }
+
     h2 {
         color: #8d8d8d;
         margin-top: 20px;
@@ -88,5 +89,19 @@
             background: #ffd700;
             color: #333;
         }
+    }
+
+    .btnHomePage{
+        display: inline;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .btnHomePage{
+            display: block;
+        }
+        img{
+            display: none !important;
+        }
+
     }
 }

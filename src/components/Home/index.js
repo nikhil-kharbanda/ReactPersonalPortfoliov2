@@ -33,6 +33,7 @@ const Home = () => {
             <div className="container home-page">
                 <div className="text-zone">
                     <h1>
+                        <span className='OpenerLines'>
                         <span className={letterClass}>H</span>
                         <span className={`${letterClass} _12`}>i,</span>
                         <br />
@@ -45,7 +46,9 @@ const Home = () => {
                             idx={15}
                         />
                         <br />
-
+                        </span>
+                        
+                        <span className='TyperWriterHeadline'>
                         <Typewriter
                             loop="true"
                             cursor
@@ -54,15 +57,17 @@ const Home = () => {
                             delaySpeed={2000}
                             deleteSpeed={100}
                         />
+                        </span>
+
                     </h1>
-                    <Link to="/contact" className="flat-button">CONTACT ME</Link>
+                    <Link to="/contact" className="flat-button btnHomePage">CONTACT ME</Link>
                     <a
                         href={Resume}
                         download="NikhilKharbanda-Resume"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <div className='resume-btn'>DOWNLOAD MY RESUME</div>
+                        <div className='resume-btn btnHomePage'>DOWNLOAD MY RESUME</div>
                     </a>
                 </div>
                 <Logo />
