@@ -7,7 +7,7 @@
         width: 40%;
         max-height: 90%;
     }
-    .OpenerLines {          
+    .OpenerLines {
         color: #fff;
         font-size: 53px;
         margin: 0;
@@ -23,17 +23,6 @@
             left: 0px;
             opacity: 0.6;
         }
-        &::after {
-            content: '</h1>';
-            font-family: 'La Belle Aurore';
-            color: #ffd700;
-            font-size: 18px;
-            position: absolute;
-            margin-top: 18px;
-            margin-left: 0px;
-            animation: fadeIn 1s 1.7s backwards;
-            opacity: 0.6;
-        }
         img {
             width: 50px;
             margin-left: 20px;
@@ -41,6 +30,25 @@
             height: auto;
             animation: rotateIn 1s linear both;
             animation-delay: 1.4s;
+        }
+    }
+
+    .TyperWriterHeadline {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Coolvetica';
+        font-weight: 400;
+        &::after {
+            content: '</h1>';
+            font-family: 'La Belle Aurore';
+            color: #ffd700;
+            font-size: 18px;
+            position: absolute;
+            margin-top: 7px;
+            margin-left: 0px;
+            animation: fadeIn 1s 1.7s backwards;
+            opacity: 0.6;
         }
     }
 
