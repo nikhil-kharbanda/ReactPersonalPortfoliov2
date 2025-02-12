@@ -70,7 +70,7 @@ const Home = () => {
                         <div className='resume-btn btnHomePage'>DOWNLOAD MY RESUME</div>
                     </a>
                 </div>
-                <Logo />
+                <Logo className='bitmojiMe'/>
             </div>
             <Loader type='pacman' />
         </>

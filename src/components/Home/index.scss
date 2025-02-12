@@ -105,9 +105,13 @@
 
     @media only screen and (max-width: 1000px) {
         .OpenerLines {
+            color: #fff;
             font-size: 30px;
-            img{
-                width: 25px;
+            margin: 0;
+            font-family: 'Coolvetica';
+            font-weight: 400;
+                img{
+                width: 20px;
                 animation: rotateIn 1s linear both;
                 animation-delay: 1.4s;
     
@@ -131,8 +135,12 @@
             display: none;
         }      
         .OpenerLines {
+            color: #fff;
             font-size: 30px;
-            img{
+            margin: 0;
+            font-family: 'Coolvetica';
+            font-weight: 400;
+                img{
                 width: 20px;
                 margin-left: 20px;
                 opacity: 0;
@@ -147,7 +155,6 @@
                 margin-top: 1px;
             }
         }
-
 
     }
 }
