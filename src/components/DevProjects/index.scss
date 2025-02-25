@@ -19,10 +19,10 @@
 }
 
 .item-devproj {
-    min-height: 40rem;
-    min-width: 50rem;
-    padding: 40px;
-    margin-left: 10vh;
+    min-height: 10rem;
+    min-width: 60rem;
+    padding: 10px;
+    margin-left: 5vh;
 }
 
 .item img {
@@ -39,7 +39,7 @@
 .carousel-devproj {
     cursor: grab;
     overflow: hidden;
-    margin-top: 5%;
+    margin-top: 15%;
     border: red dashed 1px;
     margin-left: 85px;
 }
@@ -55,5 +55,61 @@
 .devproj-instruct {
     h2 {
         font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .devproj-display {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        margin-top: 22.5%;
+        margin-left: 0%;    
+    }
+
+    .item-devproj {
+        min-height: 10rem;
+        min-width: 45rem;
+        padding: 10px;
+        margin-left: 5vh;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .devproj-display {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        margin-top: 20%;
+        margin-left: 0%;    
+    }
+
+    .item-devproj {
+        min-height: 10rem;
+        min-width: 60rem;
+        padding: 10px;
+        margin-left: 5vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .devproj-display {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        margin-top: 13%;
+        margin-left: 0%;    
+    }
+
+    .item-devproj {
+        min-height: 10rem;
+        min-width: 40rem;
+        padding: 10px;
+        margin-left: 5vh;
+    }
+    .devproj-instruct {
+        h2 {
+            font-size: 10px;
+        }
     }
 }
