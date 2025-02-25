@@ -74,26 +74,52 @@
         color: #ec4d28;
     }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
         .cubespinnerface{ 
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             border: 1px solid #ccc;
             background: rgba(255, 255, 255, 0.4);
-            font-size: 50px;
+            font-size: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 10px 0 grey;
             background: #022c43;    
         }
+    }
 
-
+    @media only screen and (max-width: 992px) {
+        .cubespinnerface{ 
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            background: rgba(255, 255, 255, 0.4);
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px 0 grey;
+            background: #022c43;    
+        }
     }
 
     @media only screen and (max-width: 768px) {
-    
+        .cubespinnerface{ 
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            background: rgba(255, 255, 255, 0.4);
+            font-size: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px 0 grey;
+            background: #022c43;    
+        }
     }
 }
 
