@@ -52,7 +52,7 @@ const Box = styled(motion.li)`
         border: 1px solid ${props => props.theme.text};
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1370px) {
       width: 40rem;
       height: 25vh;
       margin-right: 0;
@@ -77,7 +77,7 @@ const Box = styled(motion.li)`
 const Title = styled.h2`
 font-size: calc(1em + 0.5vw);
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1370px) {
 font-size: calc(0.9em + 0.25vw);
 }
 
@@ -95,7 +95,7 @@ const Description = styled.h3`
 font-size: calc(0.8em + 0.3vw);
 font-family: 'Karla',sans-serif;
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1370px) {
 font-size: calc(0.7em + 0.3vw);
 }
 
@@ -118,7 +118,7 @@ background-size: cover;
 border: 1px solid transparent;
 background-position: center center;
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1370px) {
 width: 100%;
 height: 40%;
 }
