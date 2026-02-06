@@ -9,12 +9,12 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Github } from './AllSvgs'
 
 
-const Box = styled(motion.li)`
-    width: 55rem;
-    height: 45vh;
+/*const Box = styled(motion.li)`
+    width: 30rem;
+    height: 40vh;
     background-color: #ffd700;
     color:${props => props.theme.body};
-    padding: 0.5rem 3rem;
+    padding: 2rem 5rem;
     margin-right: -25rem;
     border-radius: 50px 0 50px 0;
     display: flex;
@@ -30,14 +30,83 @@ const Box = styled(motion.li)`
         
     }
 `
+*/
+
+const Box = styled(motion.li)`
+    width: 45rem;
+    height: 35vh;
+    background-color: #ffd700;
+    color:${props => props.theme.body};
+    padding: 2rem 5rem;
+    margin-right: -25rem;
+    border-radius: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid ${props => props.theme.body};
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: #fa0000;
+        color:${props => props.theme.text};
+        border: 1px solid ${props => props.theme.text};
+    }
+
+    @media screen and (max-width: 1370px) {
+      width: 40rem;
+      height: 25vh;
+      margin-right: 0;
+      padding: 2rem 4rem;
+    }
+
+    @media screen and (max-width: 992px) {
+      width: 50rem;
+      height: 22vh;
+      margin-right: 0;
+      padding: 2rem 4rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 40rem;
+      height: 25vh;
+      margin-right: 0;
+      padding: 2rem 4rem;
+    }
+`
 
 const Title = styled.h2`
 font-size: calc(1em + 0.5vw);
+
+@media screen and (max-width: 1370px) {
+font-size: calc(0.9em + 0.25vw);
+}
+
+@media screen and (max-width: 992px) {
+font-size: calc(0.8em + 0.25vw);
+}
+
+@media screen and (max-width: 768px) {
+font-size: calc(0.7em + 0.25vw);
+}
+
 `
 
 const Description = styled.h3`
 font-size: calc(0.8em + 0.3vw);
 font-family: 'Karla',sans-serif;
+
+@media screen and (max-width: 1370px) {
+font-size: calc(0.7em + 0.3vw);
+}
+
+@media screen and (max-width: 992px) {
+font-size: calc(0.6em + 0.3vw);
+}
+
+@media screen and (max-width: 768px) {
+font-size: calc(0.5em + 0.3vw);
+}
+
 `
 
 const Image = styled.div`
@@ -48,6 +117,21 @@ height: 50%;
 background-size: cover;
 border: 1px solid transparent;
 background-position: center center;
+
+@media screen and (max-width: 1370px) {
+width: 100%;
+height: 40%;
+}
+
+@media screen and (max-width: 992px) {
+width: 100%;
+height: 35%;
+}
+
+@media screen and (max-width: 768px) {
+width: 100%;
+height: 32%;
+}
 
 `
 

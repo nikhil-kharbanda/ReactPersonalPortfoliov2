@@ -1,6 +1,6 @@
 .nav-bar {
     background: #181818;
-    width: 4%;
+    width: 5%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -50,7 +50,7 @@
             &:after {
                 content: '';
                 font-size: 9px;
-                letter-spacing: 2px;
+                letter-spacing: 1px;
                 position: absolute;
                 bottom: 0;
                 display: block;
@@ -83,7 +83,7 @@
         }
         a.eng-link {
             &:after {
-                content: 'ENGINEERING';
+                content: 'PROJECTS';
             }
         }
         a.jobs-link {
@@ -123,6 +123,20 @@
                 .anchor-icon {
                     color: #ffd700;
                 }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1010px) {
+        .logo{
+            img{
+                display: block;
+                margin: 6px auto;
+                width: 20px;
+                height: auto;
+                &.sub-logo {
+                    display: none;
+                }    
             }
         }
     }
