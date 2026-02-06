@@ -1,3 +1,5 @@
+/* src/components/About/index.js */
+
 import { faNodeJs, faGithub, faHtml5, faCss3, faJsSquare, faReact } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Loader from 'react-loaders'

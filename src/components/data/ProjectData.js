@@ -1,3 +1,5 @@
+/* src/components/data/ProjectData.js */
+
 export const Proj = [
     {
       id: 1,

@@ -1,3 +1,5 @@
+/* src/components/Contact/index.js */
+
 import Loader from 'react-loaders';
 import emailjs from "@emailjs/browser"
 import { useEffect, useRef, useState } from 'react'

@@ -1,3 +1,5 @@
+/* src/components/Sidebar/index.js */
+
 import { Link, NavLink } from 'react-router-dom'
 import './index.scss'
 import LogoK from '../../assets/images/logo-s.png'

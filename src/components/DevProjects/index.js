@@ -1,3 +1,5 @@
+/* src/components/DevProjects/index.js */
+
 import { useEffect, useState, useRef } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'

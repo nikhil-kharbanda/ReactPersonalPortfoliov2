@@ -1,3 +1,5 @@
+/* src/components/data/PrevJobsData.js */
+
 export const PrevJobsData = [
   {
     id: 1,
