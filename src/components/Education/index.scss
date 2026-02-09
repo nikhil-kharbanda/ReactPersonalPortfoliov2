@@ -15,30 +15,471 @@
     animation-delay: 1s;
 }
 
-.education-title {
-    position: fixed;
-    margin-top: -17%;
+.edu-page {
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35%;
+        vertical-align: middle;
+        display: table-cell;
+        max-height: 90%;
+        
+        /* ADDED: Smooth transitions for responsive changes */
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        h1 {
+            font-size: 53px;
+            font-family: 'Coolvetica';
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+            
+            /* ADDED: Smooth font size transitions */
+            transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            &:before {
+                content: '<h1>';
+                font-family: 'La Belle Aurore', cursive;
+                color: #ffd700;
+                font-size: 18px;
+                position: absolute;
+                margin-top: -10px;
+                left: -10px;
+                opacity: 0.6;
+                line-height: 18px;
+                transition: font-size 0.3s ease;
+            }
+            
+            &:after {
+                content: '</h1>';
+                font-family: 'La Belle Aurore', cursive;
+                color: #ffd700;
+                font-size: 18px;
+                line-height: 18px;
+                position: absolute;
+                left: -30px;
+                bottom: -20px;
+                margin-left: 20px;
+                opacity: 0.6;
+                transition: font-size 0.3s ease;
+            }
+        }
+    }
 }
 
-.box-edu {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding-bottom: 5rem;
-    margin-top: -5%;
+.education-accordion-container {
+    position: absolute;
+    left: 45%;
+    top: 15%;
+    width: 50%;
+    max-width: 900px;
+    padding-bottom: 3rem;
+    overflow-y: auto;
+    max-height: 75vh;
+    
+    /* ADDED: Smooth transitions for layout changes */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+        width: 8px;
+        transition: width 0.3s ease;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: #ffd700;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+        
+        &:hover {
+            background: #ffed4e;
+        }
+    }
 }
 
-.center-edu {
+.accordion-item {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: slideInFromLeft 0.6s ease forwards;
+    
+    &:hover {
+        border-color: rgba(255, 215, 0, 0.5);
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+        transform: translateX(5px);
+    }
+    
+    &.expanded {
+        border-color: #ffd700;
+        background: rgba(0, 0, 0, 0.5);
+        
+        .accordion-header {
+            background: rgba(255, 215, 0, 0.1);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+    }
+}
+
+.accordion-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 15%;
-    margin-left: -30%;
-    margin-right: -40%;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* ADDED: Smooth padding transitions */
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                background 0.3s ease;
+    
+    &:hover {
+        background: rgba(255, 215, 0, 0.05);
+        
+        .item-title {
+            color: #ffed4e;
+        }
+        
+        .accordion-icon {
+            transform: scale(1.2);
+            color: #ffed4e;
+        }
+    }
 }
 
-.gridEdu {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(calc(10rem + 15vw), 1fr));
-    grid-gap: calc(1rem + 2vw);
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+    /* ADDED: Smooth gap transitions */
+    transition: gap 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffd700;
+    font-family: 'Coolvetica', sans-serif;
+    min-width: 50px;
+    text-align: center;
+    padding: 0.5rem;
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* ADDED: Smooth size and rotation transitions */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    .accordion-item:hover & {
+        background: rgba(255, 215, 0, 0.1);
+        transform: rotate(360deg);
+    }
+}
+
+.item-title {
+    font-size: 1.3rem;
+    font-family: 'Coolvetica', sans-serif;
+    color: #fff;
+    margin: 0;
+    font-weight: 400;
+    
+    /* ADDED: Smooth font size and color transitions */
+    transition: color 0.3s ease, 
+                font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    color: #ffd700;
+    transition: all 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 2rem;
+    
+    &.show {
+        max-height: 600px;
+        padding: 2rem;
+        animation: fadeIn 0.5s ease;
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    
+    /* ADDED: Smooth layout transitions */
+    transition: flex-direction 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                gap 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-left {
+    flex: 0 0 300px;
+    
+    /* ADDED: Smooth flex basis transitions */
+    transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+    
+    /* ADDED: Smooth height transitions */
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                transform 0.3s ease;
+    
+    &:hover {
+        border-color: #ffd700;
+        transform: scale(1.05);
+        
+        .image-overlay {
+            opacity: 1;
+        }
+        
+        img {
+            transform: scale(1.1);
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-icon {
+    font-size: 3rem;
+    color: #ffd700;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.content-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.description {
+    p {
+        font-size: 1rem;
+        color: #fff;
+        font-family: sans-serif;
+        line-height: 1.6;
+        margin: 0 0 1rem 0;
+        
+        /* ADDED: Smooth font size transitions */
+        transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.certificate-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    text-decoration: none;
+    font-family: 'Coolvetica', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    width: fit-content;
+    
+    /* ADDED: Smooth button transitions */
+    transition: all 0.3s ease,
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+        background: #ffd700;
+        color: #022c43;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        
+        svg {
+            transform: translateX(3px);
+        }
+    }
+    
+    svg {
+        transition: transform 0.3s ease;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design with Smooth Animations */
+@media only screen and (max-width: 1200px) {
+    .edu-page .text-zone {
+        h1 {
+            font-size: 35px;
+        }
+    }
+    
+    .education-accordion-container {
+        left: 45%;
+        width: 52%;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .content-left {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .image-container {
+        height: 180px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .edu-page .text-zone {
+        left: 5%;
+        top: 10%;
+        transform: none;
+        width: 90%;
+        
+        h1 {
+            font-size: 30px;
+        }
+    }
+    
+    .education-accordion-container {
+        left: 5%;
+        top: 25%;
+        width: 90%;
+        max-height: 65vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .edu-page .text-zone {
+        h1 {
+            font-size: 28px;
+            
+            &:before {
+                font-size: 14px;
+            }
+            
+            &:after {
+                font-size: 14px;
+            }
+        }
+    }
+    
+    .education-accordion-container {
+        top: 22%;
+        max-height: 70vh;
+    }
+    
+    .accordion-header {
+        padding: 1rem;
+    }
+    
+    .header-left {
+        gap: 1rem;
+    }
+    
+    .item-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        min-width: 40px;
+    }
+    
+    .item-title {
+        font-size: 1rem;
+    }
+    
+    .accordion-content.show {
+        padding: 1rem;
+    }
+    
+    .content-wrapper {
+        gap: 1rem;
+    }
+    
+    .description p {
+        font-size: 0.9rem;
+    }
+    
+    .certificate-link {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* ADDED: Smooth window resize animations */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
 }

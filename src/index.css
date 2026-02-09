@@ -1,5 +1,8 @@
+/* src/index.css */
+
 html {
     font-size: 62.5%;
+    height: 100%; /* ADDED: Ensures html takes full height */
 }
 
 body {
@@ -11,4 +14,12 @@ body {
     display: block;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%; /* ADDED: Ensures body takes full height */
+    min-height: 100vh; /* ADDED: Minimum viewport height */
+}
+
+/* ADDED: Ensure root element has proper height */
+#root {
+    height: 100%;
+    min-height: 100vh;
 }

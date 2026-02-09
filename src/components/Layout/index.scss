@@ -11,7 +11,7 @@
     opacity: 0.6;
     position: absolute;
     bottom: 0;
-    left: 120px;
+    left: calc(5% + 20px); /* FIXED: Changed from 120px to be responsive with sidebar */
     font-size: 18px;
     font-family: 'La Belle Aurore', cursive;
 }
@@ -169,5 +169,12 @@
                 animation: pulse 1s;
             }    
         }
+    }
+}
+
+/* ADDED: Media query for ultra-wide screens (1950px+) */
+@media only screen and (min-width: 1950px) {
+    .tags {
+        left: calc(5% + 30px); /* Extra spacing for very large screens */
     }
 }

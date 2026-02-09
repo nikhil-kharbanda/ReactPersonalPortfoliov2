@@ -1,11 +1,15 @@
+/* src/components/Sidebar/index.scss */
+
 .nav-bar {
     background: #181818;
     width: 5%;
-    height: 100%;
-    position: absolute;
+    min-height: 100vh; /* Minimum full viewport height */
+    height: 100%; /* Take parent's height if taller */
+    position: fixed; /* Fixed to viewport */
     top: 0;
+    left: 0;
+    bottom: 0; /* CRITICAL: Forces extension to bottom */
     z-index: 3;
-    min-height: 500px;
     .logo {
         display: block;
         padding: 8px 0;
@@ -139,5 +143,12 @@
                 }    
             }
         }
+    }
+}
+
+/* Media query for ultra-wide screens to maintain minimum width */
+@media only screen and (min-width: 1950px) {
+    .nav-bar {
+        min-width: 100px; /* Prevents sidebar from becoming too narrow */
     }
 }
