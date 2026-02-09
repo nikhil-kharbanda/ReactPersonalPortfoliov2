@@ -7,8 +7,6 @@ import './index.scss'
 import { PrevJobsData } from '../data/PrevJobsData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
-  faChevronDown, 
-  faChevronUp, 
   faBriefcase, 
   faMapMarkerAlt,
   faCalendar,
@@ -19,7 +17,7 @@ import {
 
 const Jobs = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const [expandedId, setExpandedId] = useState(null)
+  const [selectedId, setSelectedId] = useState(null)
   const [imageErrors, setImageErrors] = useState({})
 
   useEffect(() => {
@@ -32,18 +30,18 @@ const Jobs = () => {
     }
   }, [])
 
-  const toggleAccordion = (id) => {
-    setExpandedId(expandedId === id ? null : id)
-  }
-
   const handleImageError = (jobId) => {
     setImageErrors(prev => ({ ...prev, [jobId]: true }))
+  }
+
+  const toggleDetails = (id) => {
+    setSelectedId(selectedId === id ? null : id)
   }
 
   return (
     <>
       <div className="container-jobs jobs-page">
-        {/* Title on the left */}
+        {/* Title */}
         <div className="text-zone">
           <h1>
             <AnimatedLetters
@@ -52,114 +50,114 @@ const Jobs = () => {
               idx={10}
             />
           </h1>
+          <p className="subtitle">Career Journey & Experience</p>
         </div>
 
-        {/* Accordion on the right */}
-        <div className="jobs-accordion-container">
+        {/* Timeline */}
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
+          
           {PrevJobsData.map((job, index) => (
             <div
               key={job.id}
-              className={`accordion-item ${expandedId === job.id ? 'expanded' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} ${selectedId === job.id ? 'expanded' : ''}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Accordion Header */}
-              <div
-                className="accordion-header"
-                onClick={() => toggleAccordion(job.id)}
-              >
-                <div className="header-left">
-                  <div className="item-number">{String(job.id).padStart(2, '0')}</div>
-                  <div className="header-info">
-                    <h2 className="company-name">{job.company}</h2>
-                    <p className="role-title">{job.role}</p>
-                  </div>
+              {/* Timeline Dot */}
+              <div className="timeline-dot">
+                <div className="dot-inner">
+                  <FontAwesomeIcon icon={faBriefcase} />
                 </div>
-                <div className="header-right">
-                  <span className="job-type-badge">{job.type}</span>
-                  <FontAwesomeIcon
-                    icon={expandedId === job.id ? faChevronUp : faChevronDown}
-                    className="accordion-icon"
-                  />
-                </div>
+                <div className="dot-pulse"></div>
               </div>
 
-              {/* Accordion Content */}
-              <div className={`accordion-content ${expandedId === job.id ? 'show' : ''}`}>
-                <div className="content-wrapper">
-                  {/* Left side - Company logo/image */}
-                  <div className="content-left">
-                    <div className="image-container">
-                      {!imageErrors[job.id] && job.imgSrc ? (
-                        <img 
-                          src={job.imgSrc} 
-                          alt={job.company}
-                          onError={() => handleImageError(job.id)}
-                        />
-                      ) : (
-                        <div className="image-fallback">
-                          <FontAwesomeIcon icon={faBuilding} className="fallback-icon" />
-                          <span>{job.company}</span>
-                        </div>
-                      )}
-                      <div className="image-overlay">
-                        <FontAwesomeIcon icon={faBriefcase} className="job-icon" />
+              {/* Timeline Card */}
+              <div className="timeline-card" onClick={() => toggleDetails(job.id)}>
+                {/* Card Header */}
+                <div className="card-header">
+                  <div className="company-logo">
+                    {!imageErrors[job.id] && job.imgSrc ? (
+                      <img 
+                        src={job.imgSrc} 
+                        alt={job.company}
+                        onError={() => handleImageError(job.id)}
+                      />
+                    ) : (
+                      <div className="logo-fallback">
+                        <FontAwesomeIcon icon={faBuilding} />
                       </div>
-                    </div>
-                    
-                    {/* Job meta info */}
-                    <div className="job-meta">
-                      <div className="meta-item">
+                    )}
+                  </div>
+                  <div className="header-content">
+                    <h3 className="company-name">{job.company}</h3>
+                    <p className="role-title">{job.role}</p>
+                    <div className="job-meta-inline">
+                      <span className="meta-badge">
                         <FontAwesomeIcon icon={faCalendar} />
-                        <span>{job.dates}</span>
-                      </div>
-                      <div className="meta-item">
+                        {job.dates}
+                      </span>
+                      <span className="meta-badge">
                         <FontAwesomeIcon icon={faMapMarkerAlt} />
-                        <span>{job.location}</span>
-                      </div>
+                        {job.location}
+                      </span>
+                      <span className={`type-badge ${job.type.toLowerCase()}`}>
+                        {job.type}
+                      </span>
                     </div>
                   </div>
+                </div>
 
-                  {/* Right side - Job details */}
-                  <div className="content-right">
-                    {/* Description */}
-                    <div className="job-description">
-                      <p>{job.description}</p>
-                    </div>
-
-                    {/* Key Achievements */}
-                    {job.achievements && job.achievements.length > 0 && (
-                      <div className="achievements-section">
-                        <h3>
-                          <FontAwesomeIcon icon={faCheckCircle} />
-                          Key Achievements
-                        </h3>
-                        <ul>
-                          {job.achievements.map((achievement, i) => (
-                            <li key={i}>{achievement}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Tech Stack */}
-                    {job.techStack && job.techStack.length > 0 && (
-                      <div className="tech-stack-section">
-                        <h3>
-                          <FontAwesomeIcon icon={faCode} />
-                          Tech Stack & Skills
-                        </h3>
-                        <div className="tech-tags">
-                          {job.techStack.map((tech, i) => (
-                            <span key={i} className="tech-tag">{tech}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                {/* Card Body - Expands on click */}
+                <div className={`card-body ${selectedId === job.id ? 'show' : ''}`}>
+                  {/* Description */}
+                  <div className="job-description">
+                    <p>{job.description}</p>
                   </div>
+
+                  {/* Achievements */}
+                  {job.achievements && job.achievements.length > 0 && (
+                    <div className="achievements-section">
+                      <h4>
+                        <FontAwesomeIcon icon={faCheckCircle} />
+                        Key Achievements
+                      </h4>
+                      <ul>
+                        {job.achievements.map((achievement, i) => (
+                          <li key={i}>{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Tech Stack */}
+                  {job.techStack && job.techStack.length > 0 && (
+                    <div className="tech-section">
+                      <h4>
+                        <FontAwesomeIcon icon={faCode} />
+                        Technologies & Skills
+                      </h4>
+                      <div className="tech-tags">
+                        {job.techStack.map((tech, i) => (
+                          <span key={i} className="tech-tag">{tech}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Expand Indicator */}
+                <div className="expand-indicator">
+                  {selectedId === job.id ? 'Click to collapse' : 'Click for details'}
                 </div>
               </div>
             </div>
           ))}
+
+          {/* Timeline End Marker */}
+          <div className="timeline-end">
+            <div className="end-dot"></div>
+            <span className="end-text">Career Journey Continues...</span>
+          </div>
         </div>
       </div>
 
