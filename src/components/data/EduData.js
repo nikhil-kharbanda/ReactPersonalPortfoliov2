@@ -1,3 +1,5 @@
+/* src/components/data/EduData.js */
+
 import AdvdPcSecCertif from '../../assets/docs/Certifs/Advcd_PC_Security_Certif_NikhilKharbanda.pdf'
 import FullStackCertif from '../../assets/docs/Certifs/FullStack_Certificate.pdf'
 import DatabaseCertif from '../../assets/docs/Certifs/Intro_To_Databases_Certif_NikhilKharbanda.pdf'

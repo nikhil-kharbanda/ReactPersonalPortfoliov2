@@ -1,3 +1,5 @@
+/* src/components/subComponents/AllSvgs.js */
+
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 export const HomeBtn = (props) => {

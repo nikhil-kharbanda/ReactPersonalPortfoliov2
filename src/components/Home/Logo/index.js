@@ -1,3 +1,5 @@
+/* src/components/Home/Logo/index.js */
+
 import './index.scss';
 import { motion } from 'framer-motion'
 import Me from './Bitmoji.png'

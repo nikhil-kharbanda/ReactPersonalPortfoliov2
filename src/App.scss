@@ -1,3 +1,5 @@
+/* src/App.scss */
+
 $primary-color: #ffd700;
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
@@ -39,4 +41,11 @@ textarea {
     height: 50px;
     animation: fadeOut 1s 1s;
     animation-fill-mode: forwards;
+}
+
+/* ADDED: Ensure App container has proper height */
+.App {
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
 }

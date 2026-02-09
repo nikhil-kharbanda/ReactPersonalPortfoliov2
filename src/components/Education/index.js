@@ -1,13 +1,16 @@
-import { useEffect, useState, useRef } from 'react'
+/* src/components/Education/index.js */
+
+import { useEffect, useState } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import './index.scss'
 import { Edu } from '../data/EduData'
-import EduComponents from '../subComponents/EduCard'
-import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faChevronUp, faExternalLinkAlt, faCertificate } from '@fortawesome/free-solid-svg-icons'
 
 const Education = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [expandedId, setExpandedId] = useState(null)
 
   useEffect(() => {
     let timeout
@@ -19,37 +22,80 @@ const Education = () => {
     }
   }, [])
 
-  const [height, setHeight] = useState(0);
-  const carousel = useRef();
-
-  useEffect(() => {
-    setHeight(carousel.current.scrollHeight - carousel.current.offsetHeight)
-  }, []);
+  const toggleAccordion = (id) => {
+    setExpandedId(expandedId === id ? null : id)
+  }
 
   return (
     <>
       <div className="container-edu edu-page">
-        <div className="text-zone education-title" >
+        {/* Title at the very top */}
+        <div className="text-zone">
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={[
-                'E', 'd', 'u', 'c', 'a', 't', 'i', 'o', 'n']}
+              strArray={['E', 'd', 'u', 'c', 'a', 't', 'i', 'o', 'n']}
               idx={10}
             />
           </h1>
-          </div>
-          {/* TODO: Add education cards */}
-          <div className='box-edu'>
-            <div ref={carousel} className='center-edu' whileTap={{ cursor: "grabbing" }} style={{ originX: 0.5 }}>
-              <motion.div dragConstraints={{top: 10, bottom: -height - 150}} className='gridEdu'>
-                {Edu.map((Proj) => {
-                  return <EduComponents key={Proj.id} proj={Proj} />
-                })}
-              </motion.div>
-          </div>
-          {/* END TODO: Add education cards */}
+        </div>
 
+        {/* Accordion items below title */}
+        <div className="education-accordion-container">
+          {Edu.map((item, index) => (
+            <div
+              key={item.id}
+              className={`accordion-item ${expandedId === item.id ? 'expanded' : ''}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Accordion Header */}
+              <div
+                className="accordion-header"
+                onClick={() => toggleAccordion(item.id)}
+              >
+                <div className="header-left">
+                  <div className="item-number">{String(item.id).padStart(2, '0')}</div>
+                  <h2 className="item-title">{item.name}</h2>
+                </div>
+                <div className="header-right">
+                  <FontAwesomeIcon
+                    icon={expandedId === item.id ? faChevronUp : faChevronDown}
+                    className="accordion-icon"
+                  />
+                </div>
+              </div>
+
+              {/* Accordion Content */}
+              <div className={`accordion-content ${expandedId === item.id ? 'show' : ''}`}>
+                <div className="content-wrapper">
+                  <div className="content-left">
+                    <div className="image-container">
+                      <img src={item.imgSrc} alt={item.name} />
+                      <div className="image-overlay">
+                        <FontAwesomeIcon icon={faCertificate} className="cert-icon" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-right">
+                    <div className="description">
+                      {item.description.map((desc, i) => (
+                        <p key={i}>{desc}</p>
+                      ))}
+                    </div>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="certificate-link"
+                    >
+                      <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

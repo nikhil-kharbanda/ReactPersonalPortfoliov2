@@ -1,3 +1,5 @@
+/* src/components/subComponents/EduCard.js */
+
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { motion } from 'framer-motion'
