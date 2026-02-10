@@ -188,4 +188,35 @@
         }
     }
 
+        @media only screen and (max-width: 320px) {
+        .btnHomePage{
+            display: block;
+        }
+        .bitmojiMe{
+            display: none;
+        }      
+        .OpenerLines {
+            color: #fff;
+            font-size: 40px;
+            margin: 0;
+            font-family: 'Coolvetica';
+            font-weight: 400;
+                img{
+                width: 20px;
+                margin-left: 20px;
+                opacity: 0;
+                height: auto;
+                animation: rotateIn 1s linear both;
+                animation-delay: 1.4s;        
+            }
+        }
+        .TyperWriterHeadline {
+            font-size: 20px;
+            &::after {
+                margin-top: 1px;
+            }
+        }
+    }
+
+
 }
