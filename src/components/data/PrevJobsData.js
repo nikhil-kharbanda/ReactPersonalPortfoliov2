@@ -6,8 +6,8 @@ export const PrevJobsData = [
     company: 'Stellantis',
     role: 'Embedded Systems Engineer',
     dates: 'April 2022 - Present',
-    location: 'Windsor, ON',
-    description: 'I had worked at Stellantis from April 2022 - Present as an Embedded Systems Engineer. In this role, I was responsible for preforming reviews with inspections for the requirements, design documents, C/C++ code changes and test plans. This team works with other engineering teams responsible for the development of software for engine and transmission controls. I was tasked to the HWIO aspect of the development, as well as creating tools/scripts allowing for global autonomous auto-generation and testing between multiple platforms.',
+    location: 'Auburn Hills, MI',
+    description: 'I had worked at Stellantis from April 2022 - Present as an Embedded Systems Engineer and Scrum Master for the ePT Teams (Foundation, Diagnostics, and Communication). In this role, I was responsible for preforming reviews with inspections for the requirements, design documents, C/C++ code changes and test plans. This team works with other engineering teams responsible for the development of software for engine and transmission controls. I was tasked to the HWIO aspect of the development, as well as creating tools/scripts allowing for global autonomous auto-generation and testing between multiple platforms.',
     achievements: [
       'Led HWIO aspect of development for multiple platforms',
       'Created tools/scripts for global autonomous auto-generation and testing',
