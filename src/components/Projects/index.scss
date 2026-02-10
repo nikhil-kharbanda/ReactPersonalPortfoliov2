@@ -1,6 +1,6 @@
-/* src/components/DevProjects/index.scss */
+/* src/components/Projects/index.scss */
 
-.container-dev-projects {
+.container-projects {
     width: 100%;
     will-change: contents;
     height: 100%;
@@ -15,7 +15,7 @@
     animation-delay: 1s;
 }
 
-.dev-projects-page {
+.projects-page {
     .text-zone {
         position: absolute;
         left: 10%;
@@ -28,7 +28,7 @@
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         
         h1 {
-            font-size: 53px;
+            font-size: 70px;
             font-family: 'Coolvetica';
             color: #ffd700;
             font-weight: 400;
@@ -68,9 +68,69 @@
             color: #8d8d8d;
             font-size: 0.9rem;
             font-family: sans-serif;
-            margin: 0;
+            margin: 0 0 1.5rem 0;
             padding-left: 10px;
         }
+    }
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 10px;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 215, 0, 0.05);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    border-radius: 8px;
+    color: #8d8d8d;
+    font-family: 'Coolvetica', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    
+    svg {
+        font-size: 1rem;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover {
+        background: rgba(255, 215, 0, 0.1);
+        border-color: rgba(255, 215, 0, 0.4);
+        color: #ffd700;
+        transform: translateX(5px);
+        
+        svg {
+            transform: scale(1.2);
+        }
+    }
+    
+    &.active {
+        background: rgba(255, 215, 0, 0.15);
+        border-color: #ffd700;
+        color: #ffd700;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        
+        svg {
+            animation: pulse 2s ease infinite;
+        }
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
 }
 
@@ -130,11 +190,58 @@
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
     transition: all 0.3s ease;
+    position: relative;
     
     &:hover {
         border-color: rgba(255, 215, 0, 0.6);
         box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
         transform: translateY(-5px);
+    }
+    
+    /* Different border colors for categories */
+    &.engineering:hover {
+        border-color: rgba(100, 200, 255, 0.6);
+        box-shadow: 0 8px 25px rgba(100, 200, 255, 0.2);
+    }
+    
+    &.web-dev:hover {
+        border-color: rgba(255, 100, 200, 0.6);
+        box-shadow: 0 8px 25px rgba(255, 100, 200, 0.2);
+    }
+}
+
+/* Category Badge */
+.category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 215, 0, 0.9);
+    color: #022c43;
+    font-size: 1.27rem;
+    font-family: 'Coolvetica', sans-serif;
+    border-radius: 15px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    
+    svg {
+        font-size: 0.75rem;
+    }
+    
+    &.engineering {
+        background: rgba(100, 200, 255, 0.9);
+        color: #022c43;
+    }
+    
+    &.web-dev {
+        background: rgba(255, 100, 200, 0.9);
+        color: #fff;
     }
 }
 
@@ -192,7 +299,7 @@
     color: #ffd700;
     text-decoration: none;
     font-family: 'Coolvetica', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     border-radius: 4px;
     transition: all 0.3s ease;
     justify-content: center;
@@ -214,7 +321,7 @@
 }
 
 .project-title {
-    font-size: 1.3rem;
+    font-size: 2.2rem;
     font-family: 'Coolvetica', sans-serif;
     color: #ffd700;
     margin: 0 0 1rem 0;
@@ -222,7 +329,7 @@
 }
 
 .project-description {
-    font-size: 0.9rem;
+    font-size: 1.5rem !important;
     color: #fff;
     font-family: sans-serif;
     line-height: 1.6;
@@ -250,7 +357,7 @@
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 3px;
     color: #ffd700;
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     font-family: 'Coolvetica', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -304,6 +411,15 @@
     color: #022c43;
 }
 
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #8d8d8d;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -318,7 +434,7 @@
 
 /* Responsive Design */
 @media only screen and (max-width: 1200px) {
-    .dev-projects-page .text-zone {
+    .projects-page .text-zone {
         h1 {
             font-size: 40px;
         }
@@ -331,7 +447,7 @@
 }
 
 @media only screen and (max-width: 992px) {
-    .dev-projects-page .text-zone {
+    .projects-page .text-zone {
         left: 5%;
         top: 8%;
         transform: none;
@@ -342,16 +458,26 @@
         }
     }
     
+    .filter-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+    
     .masonry-container {
         left: 5%;
-        top: 22%;
+        top: 30%;
         width: 90%;
-        max-height: 70vh;
+        max-height: 62vh;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .dev-projects-page .text-zone h1 {
+    .projects-page .text-zone h1 {
         font-size: 28px;
     }
     
@@ -368,6 +494,11 @@
     }
     
     .project-description {
-        font-size: 0.85rem;
+        font-size: 0.85rem !important;
+    }
+    
+    .category-badge {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
     }
 }

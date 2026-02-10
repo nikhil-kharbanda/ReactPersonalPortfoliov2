@@ -57,8 +57,8 @@ const Jobs = () => {
         <div className="timeline-container">
           <div className="timeline-line"></div>
           
-          {PrevJobsData.map((job, index) => (
-            <div
+        {[...PrevJobsData].reverse().map((job, index) => (
+              <div
               key={job.id}
               className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} ${selectedId === job.id ? 'expanded' : ''}`}
               style={{ animationDelay: `${index * 0.2}s` }}
