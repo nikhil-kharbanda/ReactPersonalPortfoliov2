@@ -1,4 +1,5 @@
 /* src/components/data/AllProjsData.js */
+
 import RC_Car from '../../assets/images/RC_Car.png'
 import SmartMirror from '../../assets/images/SmartMirror.jpeg'
 
@@ -10,10 +11,11 @@ export const AllProjectsData = [
     description: 'For my final year engineering Capstone project, my group and I decided to create a smart home Magic Mirror with an AI component. This AI was designed to recognize what the user is currently wearing, then generates similar outfits based on that. The goal of this mirror was to help inspire users with similar outfits, giving them a variation on their everyday apparel. This project also allows users an ease of getting ready for the day, whether it being meetings, social gatherings or just going for a walk.',
     image: SmartMirror,
     category: 'Engineering',
-    type: 'video', // Has video demo
+    type: 'video',
     link: 'https://www.youtube.com/watch?v=oUI2s6KUGG4&ab_channel=NikhilKharbanda',
     demo: 'https://www.youtube.com/watch?v=oUI2s6KUGG4&ab_channel=NikhilKharbanda',
-    github: null
+    github: null,
+    techStack: ['AI', 'Computer Vision', 'Python', 'Raspberry Pi', 'Machine Learning']
   },
   {
     id: 2,
@@ -24,7 +26,8 @@ export const AllProjectsData = [
     type: 'video',
     link: 'https://youtu.be/VQaq__QIThw',
     demo: 'https://youtu.be/VQaq__QIThw',
-    github: null
+    github: null,
+    techStack: ['Raspberry Pi', 'Python', 'Ultrasonic Sensors', 'Hardware', 'Automation']
   },
 
   // Web Development Projects
@@ -37,7 +40,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://nftc-collect.herokuapp.com/login',
     github: 'https://github.com/nikhil-kharbanda/UofT_NFTC',
-    link: 'https://nftc-collect.herokuapp.com/login'
+    link: 'https://nftc-collect.herokuapp.com/login',
+    techStack: ['React', 'Node.js', 'MongoDB']
   },
   {
     id: 4,
@@ -48,7 +52,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://devspace-jnmst.herokuapp.com/',
     github: 'https://github.com/nikhil-kharbanda/UofT_Chatbox',
-    link: 'https://devspace-jnmst.herokuapp.com/'
+    link: 'https://devspace-jnmst.herokuapp.com/',
+    techStack: ['React', 'Node.js', 'Socket.io', 'MongoDB']
   },
   {
     id: 5,
@@ -59,7 +64,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://nikhil-kharbanda.github.io/UofT-Crypto_Proj1/',
     github: 'https://github.com/nikhil-kharbanda/UofT-Crypto_Proj1',
-    link: 'https://nikhil-kharbanda.github.io/UofT-Crypto_Proj1/'
+    link: 'https://nikhil-kharbanda.github.io/UofT-Crypto_Proj1/',
+    techStack: ['JavaScript', 'Bootstrap', 'API', 'HTML/CSS']
   },
   {
     id: 6,
@@ -70,7 +76,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://uoft-workoutexercise-tracker.herokuapp.com/',
     github: 'https://github.com/nikhil-kharbanda/UofT_WorkoutTracker',
-    link: 'https://uoft-workoutexercise-tracker.herokuapp.com/'
+    link: 'https://uoft-workoutexercise-tracker.herokuapp.com/',
+    techStack: ['Node.js', 'Express', 'MongoDB', 'Mongoose']
   },
   {
     id: 7,
@@ -81,7 +88,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://uoft-techblog.herokuapp.com/',
     github: 'https://github.com/nikhil-kharbanda/UofT_TechBlog',
-    link: 'https://uoft-techblog.herokuapp.com/'
+    link: 'https://uoft-techblog.herokuapp.com/',
+    techStack: ['Node.js', 'Express', 'Handlebars', 'MySQL']
   },
   {
     id: 8,
@@ -92,7 +100,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://nikhil-kharbanda.github.io/UofT-WeatherDashboard/',
     github: 'https://github.com/nikhil-kharbanda/UofT-WeatherDashboard',
-    link: 'https://nikhil-kharbanda.github.io/UofT-WeatherDashboard/'
+    link: 'https://nikhil-kharbanda.github.io/UofT-WeatherDashboard/',
+    techStack: ['JavaScript', 'API', 'HTML/CSS']
   },
   {
     id: 9,
@@ -103,7 +112,8 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://nikhil-kharbanda.github.io/UofT_CodeQuiz/',
     github: 'https://github.com/nikhil-kharbanda/UofT_CodeQuiz',
-    link: 'https://nikhil-kharbanda.github.io/UofT_CodeQuiz/'
+    link: 'https://nikhil-kharbanda.github.io/UofT_CodeQuiz/',
+    techStack: ['JavaScript', 'HTML/CSS', 'DOM Manipulation']
   },
   {
     id: 10,
@@ -114,6 +124,7 @@ export const AllProjectsData = [
     type: 'web',
     demo: 'https://nikhil-kharbanda.github.io/UofTBootcamp_PasswordGenerator/',
     github: 'https://github.com/nikhil-kharbanda/UofTBootcamp_PasswordGenerator',
-    link: 'https://nikhil-kharbanda.github.io/UofTBootcamp_PasswordGenerator/'
+    link: 'https://nikhil-kharbanda.github.io/UofTBootcamp_PasswordGenerator/',
+    techStack: ['JavaScript', 'HTML/CSS', 'Algorithms']
   }
 ]

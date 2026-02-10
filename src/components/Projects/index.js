@@ -1,7 +1,5 @@
 /* src/components/Projects/index.js */
 
-/* src/components/Projects/Projects.js */
-
 import { useEffect, useState } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
@@ -32,37 +30,6 @@ const Projects = () => {
       clearTimeout(timeout)
     }
   }, [])
-
-  // Extract tech stack from description or project name
-  const getTechStack = (project) => {
-    const techKeywords = {
-      'React': /react/i,
-      'Node.js': /node/i,
-      'MongoDB': /mongo/i,
-      'JavaScript': /javascript|js/i,
-      'Bootstrap': /bootstrap/i,
-      'API': /api/i,
-      'Heroku': /heroku/i,
-      'HTML/CSS': /html|css/i,
-      'AI': /ai|artificial intelligence/i,
-      'Computer Vision': /computer vision|opencv/i,
-      'Raspberry Pi': /raspberry pi|rpi/i,
-      'Python': /python/i,
-      'Hardware': /hardware|sensor|ultrasonic/i,
-      'IoT': /iot|autonom/i
-    }
-    
-    const found = []
-    const searchText = `${project.name} ${project.description}`.toLowerCase()
-    
-    Object.keys(techKeywords).forEach(tech => {
-      if (techKeywords[tech].test(searchText)) {
-        found.push(tech)
-      }
-    })
-    
-    return found.length > 0 ? found : [project.category === 'Engineering' ? 'Engineering' : 'Web Development']
-  }
 
   // Filter projects based on selected category
   const filteredProjects = filter === 'All' 
@@ -166,13 +133,15 @@ const Projects = () => {
                   <h3 className="project-title">{project.name}</h3>
                   <p className="project-description">{project.description}</p>
                   
-                  {/* Tech Stack Badges */}
-                  <div className="tech-stack">
-                    <FontAwesomeIcon icon={faCode} className="code-icon" />
-                    {getTechStack(project).map((tech, i) => (
-                      <span key={i} className="tech-badge">{tech}</span>
-                    ))}
-                  </div>
+                  {/* Tech Stack Badges - NOW USES MANUAL techStack ARRAY */}
+                  {project.techStack && project.techStack.length > 0 && (
+                    <div className="tech-stack">
+                      <FontAwesomeIcon icon={faCode} className="code-icon" />
+                      {project.techStack.map((tech, i) => (
+                        <span key={i} className="tech-badge">{tech}</span>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Links */}
                   <div className="project-links">
