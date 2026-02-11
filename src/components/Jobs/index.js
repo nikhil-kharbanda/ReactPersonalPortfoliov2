@@ -89,8 +89,8 @@ const Jobs = () => {
                     )}
                   </div>
                   <div className="header-content">
-                    <h3 className="company-name">{job.company}</h3>
-                    <p className="role-title">{job.role}</p>
+                    <h3 className="item-title">{job.company}</h3>
+                    <p className="secondary-title">{job.role}</p>
                     <div className="job-meta-inline">
                       <span className="meta-badge">
                         <FontAwesomeIcon icon={faCalendar} />
