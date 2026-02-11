@@ -1,77 +1,5 @@
 /* src/components/Education/index.scss */
 
-.container-edu {
-    width: 100%;
-    will-change: contents;
-    height: 100%;
-    min-height: 566px;
-    position: absolute;
-    opacity: 0;
-    top: 5%;
-    margin: 0 auto;
-    z-index: 1;
-    transform-style: preserve-3d;
-    animation: fadeIn 1s forwards;
-    animation-delay: 1s;
-}
-
-.edu-page {
-    .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 35%;
-        vertical-align: middle;
-        display: table-cell;
-        max-height: 90%;
-        
-        /* ADDED: Smooth transitions for responsive changes */
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        
-        h1 {
-            font-size: 70px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
-            font-weight: 400;
-            margin-top: 0;
-            position: relative;
-            margin-bottom: 40px;
-            left: 10px;
-            
-            /* ADDED: Smooth font size transitions */
-            transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            &:before {
-                content: '<h1>';
-                font-family: 'La Belle Aurore', cursive;
-                color: #ffd700;
-                font-size: 18px;
-                position: absolute;
-                margin-top: -10px;
-                left: -10px;
-                opacity: 0.6;
-                line-height: 18px;
-                transition: font-size 0.3s ease;
-            }
-            
-            &:after {
-                content: '</h1>';
-                font-family: 'La Belle Aurore', cursive;
-                color: #ffd700;
-                font-size: 18px;
-                line-height: 18px;
-                position: absolute;
-                left: -30px;
-                bottom: -20px;
-                margin-left: 20px;
-                opacity: 0.6;
-                transition: font-size 0.3s ease;
-            }
-        }
-    }
-}
-
 .education-accordion-container {
     position: absolute;
     left: 45%;
@@ -82,7 +10,6 @@
     overflow-y: auto;
     max-height: 75vh;
     
-    /* ADDED: Smooth transitions for layout changes */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Custom scrollbar */
@@ -192,18 +119,6 @@
     }
 }
 
-.item-title {
-    font-size: 2.2rem;
-    font-family: 'Coolvetica', sans-serif;
-    color: #fff;
-    margin: 0;
-    font-weight: 400;
-    
-    /* ADDED: Smooth font size and color transitions */
-    transition: color 0.3s ease, 
-                font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .header-right {
     display: flex;
     align-items: center;
@@ -307,22 +222,6 @@
     gap: 1.5rem;
 }
 
-.description {
-    p {
-        font-size: 1.5rem;
-        color: #fff;
-        font-family: sans-serif;
-        line-height: 1.6;
-        margin: 0 0 1rem 0;
-        
-        /* ADDED: Smooth font size transitions */
-        transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
 
 .certificate-link {
     display: inline-flex;

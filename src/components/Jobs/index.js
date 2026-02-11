@@ -110,7 +110,7 @@ const Jobs = () => {
                 {/* Card Body - Expands on click */}
                 <div className={`card-body ${selectedId === job.id ? 'show' : ''}`}>
                   {/* Description */}
-                  <div className="job-description">
+                  <div className="description">
                     <p>{job.description}</p>
                   </div>
 
