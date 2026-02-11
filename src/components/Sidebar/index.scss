@@ -2,7 +2,7 @@
 
 .nav-bar {
     background: #181818;
-    width: 5%;
+    width: 4%;
     min-height: 100vh; /* Minimum full viewport height */
     height: 100%; /* Take parent's height if taller */
     position: fixed; /* Fixed to viewport */
@@ -16,10 +16,10 @@
         img {
             display: block;
             margin: 8px auto;
-            width: 24px;
+            width: 52px;
             height: auto;
             &.sub-logo {
-                width: 50px;
+                width: 70px;
             }
         }
     }
