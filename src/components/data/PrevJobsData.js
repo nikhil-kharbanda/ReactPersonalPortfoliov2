@@ -14,7 +14,7 @@ export const PrevJobsData = [
       'Coordinated with cross-functional teams on software integration',
       'Served as Scrum Master for foundation and diagnostics teams'
     ],
-    techStack: ['C/C++', 'Python', 'AUTOSAR', 'BSW Integration', 'Embedded Systems', 'VHIL'],
+    techStack: ['C/C++/C#', 'AUTOSAR', 'BSW Integration', 'Embedded Systems', 'VHIL/VSIL'],
     imgSrc: 'https://www.stellantis.com/content/dam/stellantis-corporate/news/press-releases/2020/november/09112020/Stellantis_logo_blue_background.jpg',
     type: 'Full-time'
   },

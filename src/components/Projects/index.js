@@ -88,7 +88,7 @@ const Projects = () => {
                 onMouseLeave={() => setHoveredId(null)}
               >
                 {/* Category Badge */}
-                <div className={`category-badge ${project.category.toLowerCase().replace(' ', '-')}`}>
+                <div className={`category-badge type-badge ${project.category.toLowerCase().replace(' ', '-')}`}>
                   <FontAwesomeIcon icon={project.category === 'Engineering' ? faPlayCircle : faCode} />
                   {project.category}
                 </div>
@@ -130,15 +130,13 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="project-content">
-                  <h3 className="project-title">{project.name}</h3>
-                  <p className="project-description">{project.description}</p>
-                  
-                  {/* Tech Stack Badges - NOW USES MANUAL techStack ARRAY */}
+                  <h3 className="item-title">{project.name}</h3>
+                  <p className="description">{project.description}</p>
                   {project.techStack && project.techStack.length > 0 && (
                     <div className="tech-stack">
                       <FontAwesomeIcon icon={faCode} className="code-icon" />
                       {project.techStack.map((tech, i) => (
-                        <span key={i} className="tech-badge">{tech}</span>
+                        <span key={i} className="tech-tag">{tech}</span>
                       ))}
                     </div>
                   )}

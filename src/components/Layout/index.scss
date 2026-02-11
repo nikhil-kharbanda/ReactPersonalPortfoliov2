@@ -49,9 +49,8 @@
 
 .about-page,
 .contact-page,
-.engproj-page,
+.projects-page,
 .edu-page,
-.devproj-page,
 .jobs-page {
     .text-zone {
         position: absolute;
@@ -101,10 +100,16 @@
         }
         .subtitle {
             color: #8d8d8d;
-            font-size: 1.2rem;
-            font-family: sans-serif;
-            margin: 0;
+            font-size: 2.2rem;
             padding-left: 10px;
+
+            font-family: 'Coolvetica';
+            font-weight: 400;
+            margin-top: 10px;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+            transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
             
         p {
@@ -136,10 +141,8 @@
 .item-title {
     font-size: 2.2rem;
     font-family: 'Coolvetica', sans-serif;
-    color: #fff;
-    margin: 0;
-    font-weight: 400;
-    
+    color: #ffd700;
+    margin: 0 0 1rem 0;
     transition: color 0.3s ease, 
                 font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -153,18 +156,14 @@
 }
 
 .description {
-    p {
         font-size: 1.5rem;
         color: #fff;
         font-family: sans-serif;
         line-height: 1.6;
         margin: 0 0 1rem 0;
-        
         transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        
         &:last-child {
             margin-bottom: 0;
-        }
     }
 }
 
@@ -173,7 +172,7 @@
     background: rgba(255, 215, 0, 0.1);
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 10px;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: #ffd700;
     font-family: 'Coolvetica', sans-serif;
     text-transform: uppercase;
@@ -288,14 +287,16 @@
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 4px;
     color: #ffd700;
-    font-size: 1.37rem;
+    font-size: 1.2rem;
     font-family: 'Coolvetica', sans-serif;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     
     &:hover {
         background: rgba(255, 215, 0, 0.2);
         border-color: #ffd700;
-        transform: translateY(-2px);
+        
     }
 }
 
@@ -317,17 +318,6 @@
                 margin-bottom: 40px;
                 left: 10px;
             }
-            
-            // h2{
-            //     font-size: 18px;
-            //     font-family: 'Coolvetica';
-            //     color: #ffd700;
-            //     font-weight: 400;
-            //     margin-top: 0;
-            //     position: relative;
-            //     margin-bottom: 40px;
-            //     left: 10px;
-            // }
             .item-title{
                 h2{
                 font-weight: 400;
