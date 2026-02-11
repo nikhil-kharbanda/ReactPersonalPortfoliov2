@@ -97,13 +97,13 @@
     column-count: 3;
     column-gap: 1.5rem;
     
-    @media (max-width: 1400px) {
-        column-count: 2;
-    }
+    // @media (max-width: 1400px) {
+    //     column-count: 2;
+    // }
     
-    @media (max-width: 992px) {
-        column-count: 1;
-    }
+    // @media (max-width: 992px) {
+    //     column-count: 1;
+    // }
 }
 
 /* Masonry Item */
@@ -321,72 +321,72 @@
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 1200px) {
-    .projects-page .text-zone {
-        h1 {
-            font-size: 50px;
-        }
-    }
+// @media only screen and (max-width: 1200px) {
+//     .projects-page .text-zone {
+//         h1 {
+//             font-size: 50px;
+//         }
+//     }
     
-    .masonry-container {
-        left: 45%;
-        width: 52%;
-    }
-}
+//     .masonry-container {
+//         left: 45%;
+//         width: 52%;
+//     }
+// }
 
-@media only screen and (max-width: 992px) {
-    .projects-page .text-zone {
-        left: 5%;
-        top: 8%;
-        transform: none;
-        width: 90%;
+// @media only screen and (max-width: 992px) {
+//     .projects-page .text-zone {
+//         left: 5%;
+//         top: 8%;
+//         transform: none;
+//         width: 90%;
         
-        h1 {
-            font-size: 50px;
-        }
-    }
+//         h1 {
+//             font-size: 50px;
+//         }
+//     }
     
-    .filter-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+//     .filter-buttons {
+//         flex-direction: row;
+//         flex-wrap: wrap;
+//     }
     
-    .filter-btn {
-        font-size: 1.15rem;
-        padding: 0.6rem 1rem;
-    }
+//     .filter-btn {
+//         font-size: 1.15rem;
+//         padding: 0.6rem 1rem;
+//     }
     
-    .masonry-container {
-        left: 5%;
-        top: 30%;
-        width: 90%;
-        max-height: 62vh;
-    }
-}
+//     .masonry-container {
+//         left: 5%;
+//         top: 30%;
+//         width: 90%;
+//         max-height: 62vh;
+//     }
+// }
 
-@media only screen and (max-width: 768px) {
-    .projects-page .text-zone h1 {
-        font-size: 45px;
-    }
+// @media only screen and (max-width: 768px) {
+//     .projects-page .text-zone h1 {
+//         font-size: 45px;
+//     }
     
-    .masonry-item {
-        margin-bottom: 1rem;
-    }
+//     .masonry-item {
+//         margin-bottom: 1rem;
+//     }
     
-    .project-content {
-        padding: 1rem;
-    }
+//     .project-content {
+//         padding: 1rem;
+//     }
     
-    .project-title {
-        font-size: 1.1rem;
-    }
+//     .project-title {
+//         font-size: 1.1rem;
+//     }
     
-    .project-description {
-        font-size: 0.85rem !important;
-    }
+//     .project-description {
+//         font-size: 0.85rem !important;
+//     }
     
-    .category-badge {
-        font-size: 0.65rem;
-        padding: 0.3rem 0.6rem;
-    }
-}
+//     .category-badge {
+//         font-size: 0.65rem;
+//         padding: 0.3rem 0.6rem;
+//     }
+// }

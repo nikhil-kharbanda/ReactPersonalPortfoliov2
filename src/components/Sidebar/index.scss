@@ -131,24 +131,23 @@
         }
     }
 
-    @media only screen and (max-width: 1010px) {
-        .logo{
-            img{
-                display: block;
-                margin: 6px auto;
-                width: 20px;
-                height: auto;
-                &.sub-logo {
-                    display: none;
-                }    
-            }
-        }
-    }
+    // @media only screen and (max-width: 1010px) {
+    //     .logo{
+    //         img{
+    //             display: block;
+    //             margin: 6px auto;
+    //             width: 20px;
+    //             height: auto;
+    //             &.sub-logo {
+    //                 display: none;
+    //             }    
+    //         }
+    //     }
+    // }
 }
 
-/* Media query for ultra-wide screens to maintain minimum width */
-@media only screen and (min-width: 1950px) {
-    .nav-bar {
-        min-width: 100px; /* Prevents sidebar from becoming too narrow */
-    }
-}
+// @media only screen and (min-width: 1950px) {
+//     .nav-bar {
+//         min-width: 100px; /* Prevents sidebar from becoming too narrow */
+//     }
+// }

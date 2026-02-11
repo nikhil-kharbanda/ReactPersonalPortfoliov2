@@ -300,55 +300,60 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
-    .about-page,
-    .contact-page,
-    .engproj-page,
-    .edu-page,
-    .devproj-page,
-    .jobs-page {
-        .text-zone {
-            h1 {
-                font-size: 35px;
-                font-family: 'Coolvetica';
-                color: #ffd700;
-                font-weight: 400;
-                margin-top: 0;
-                position: relative;
-                margin-bottom: 40px;
-                left: 10px;
-            }
-            .item-title{
-                h2{
-                font-weight: 400;
-                position: relative;
-                margin-bottom: 40px;
-                left: 10px;
-                font-size: 2.2rem;
-                font-family: 'Coolvetica', sans-serif;
-                color: #fff;
-                margin: 0;
-                font-weight: 400;
-                transition: color 0.3s ease, 
-                        font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                }
-            }
+// @media only screen and (max-width: 1200px) {
+//     .about-page,
+//     .contact-page,
+//     .engproj-page,
+//     .edu-page,
+//     .devproj-page,
+//     .jobs-page {
+//         .text-zone {
+//             h1 {
+//                 font-size: 35px;
+//                 font-family: 'Coolvetica';
+//                 color: #ffd700;
+//                 font-weight: 400;
+//                 margin-top: 0;
+//                 position: relative;
+//                 margin-bottom: 40px;
+//                 left: 10px;
+//             }
+//             .item-title{
+//                 h2{
+//                 font-weight: 400;
+//                 position: relative;
+//                 margin-bottom: 40px;
+//                 left: 10px;
+//                 font-size: 2.2rem;
+//                 font-family: 'Coolvetica', sans-serif;
+//                 color: #fff;
+//                 margin: 0;
+//                 font-weight: 400;
+//                 transition: color 0.3s ease, 
+//                         font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+//                 }
+//             }
 
-            p {
-                font-size: 1.55rem;
-                color: #fff;
-                font-family: sans-serif;
-                font-weight: 300;
-                max-width: fit-content;
-                animation: pulse 1s;
-            }    
-        }
-    }
-}
-
-// /* ADDED: Media query for ultra-wide screens (1950px+) */
+//             p {
+//                 font-size: 1.55rem;
+//                 color: #fff;
+//                 font-family: sans-serif;
+//                 font-weight: 300;
+//                 max-width: fit-content;
+//                 animation: pulse 1s;
+//             }    
+//         }
+//     }
+// }
+//
 // @media only screen and (min-width: 1950px) {
 //     .tags {
 //         left: calc(5% + 30px); /* Extra spacing for very large screens */
 //     }
 // }
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
