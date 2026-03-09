@@ -133,3 +133,33 @@
     83%      { transform: rotateX(90deg); }
 
 }
+
+//Screen Responsiveness
+//Mobile 1:
+@media only screen and (max-width: 480px) {
+    //TODO
+}
+
+//Mobile 2: Landscape
+@media only screen and (max-width: 768px) {
+    //TODO
+
+}
+
+//Tablet 2: Landscape
+@media only screen and (max-width: 1024px) {
+    //TODO
+
+}
+
+//Laptop: 
+@media only screen and (max-width: 1280px) {
+    //TODO
+
+}
+
+//Desktop: 
+@media only screen and (max-width: 1536px) {
+    //TODO
+
+}

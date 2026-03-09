@@ -101,120 +101,148 @@
         }
     }
 
-    .btnHomePage{
+    .btnHomePage {
         display: inline;
     }
+}
 
-    // @media only screen and (max-width: 1200px) {
-    //     .OpenerLines {
-    //         color: #fff;
-    //         font-size: 30px;
-    //         margin: 0;
-    //         font-family: 'Coolvetica';
-    //         font-weight: 400;
-    //             img{
-    //             width: 20px;
-    //             animation: rotateIn 1s linear both;
-    //             animation-delay: 1.4s;
-    
-    //         }
-    //     }
-    //     .TyperWriterHeadline {
-    //         font-size: 20px;
-    //         &::after {
-    //             margin-top: 1px;
-    //         }
-    //     }
+//Screen Responsiveness
+//Mobile 1:
+@media only screen and (max-width: 480px) {
+    .btnHomePage {
+        display: block;
+    }
 
-    // }
+    .bitmojiMe {
+        display: none;
+    }
 
-    // @media only screen and (max-width: 992px) {
-    //     .btnHomePage{
-    //         display: block;
-    //     }
-    //     .bitmojiMe{
-    //         display: none;
-    //     }      
-    //     .OpenerLines {
-    //         color: #fff;
-    //         font-size: 30px;
-    //         margin: 0;
-    //         font-family: 'Coolvetica';
-    //         font-weight: 400;
-    //             img{
-    //             width: 20px;
-    //             margin-left: 20px;
-    //             opacity: 0;
-    //             height: auto;
-    //             animation: rotateIn 1s linear both;
-    //             animation-delay: 1.4s;        
-    //         }
-    //     }
-    //     .TyperWriterHeadline {
-    //         font-size: 20px;
-    //         &::after {
-    //             margin-top: 1px;
-    //         }
-    //     }
-    // }
+    .OpenerLines {
+        color: #fff;
+        font-size: 20px;
+        margin: 0;
+        font-family: 'Coolvetica';
+        font-weight: 400;
 
-    // @media only screen and (max-width: 768px) {
-    //     .btnHomePage{
-    //         display: block;
-    //     }
-    //     .bitmojiMe{
-    //         display: none;
-    //     }      
-    //     .OpenerLines {
-    //         color: #fff;
-    //         font-size: 30px;
-    //         margin: 0;
-    //         font-family: 'Coolvetica';
-    //         font-weight: 400;
-    //             img{
-    //             width: 20px;
-    //             margin-left: 20px;
-    //             opacity: 0;
-    //             height: auto;
-    //             animation: rotateIn 1s linear both;
-    //             animation-delay: 1.4s;        
-    //         }
-    //     }
-    //     .TyperWriterHeadline {
-    //         font-size: 20px;
-    //         &::after {
-    //             margin-top: 1px;
-    //         }
-    //     }
-    // }
+        img {
+            width: 10px;
+            margin-left: 20px;
+            opacity: 0;
+            height: auto;
+            animation: rotateIn 1s linear both;
+            animation-delay: 1.4s;
+        }
+    }
 
-    //     @media only screen and (max-width: 320px) {
-    //     .btnHomePage{
-    //         display: block;
-    //     }
-    //     .bitmojiMe{
-    //         display: none;
-    //     }      
-    //     .OpenerLines {
-    //         color: #fff;
-    //         font-size: 40px;
-    //         margin: 0;
-    //         font-family: 'Coolvetica';
-    //         font-weight: 400;
-    //             img{
-    //             width: 20px;
-    //             margin-left: 20px;
-    //             opacity: 0;
-    //             height: auto;
-    //             animation: rotateIn 1s linear both;
-    //             animation-delay: 1.4s;        
-    //         }
-    //     }
-    //     .TyperWriterHeadline {
-    //         font-size: 20px;
-    //         &::after {
-    //             margin-top: 1px;
-    //         }
-    //     }
-    // }
+    .TyperWriterHeadline {
+        font-size: 7px;
+
+        &::after {
+            margin-top: 1px;
+        }
+    }
+}
+
+//Mobile 2: Landscape
+@media only screen and (max-width: 768px) {
+    .btnHomePage {
+        display: block;
+    }
+
+    .bitmojiMe {
+        display: none;
+    }
+
+    .OpenerLines {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Coolvetica';
+        font-weight: 400;
+
+        img {
+            width: 20px;
+            margin-left: 20px;
+            opacity: 0;
+            height: auto;
+            animation: rotateIn 1s linear both;
+            animation-delay: 1.4s;
+        }
+    }
+
+    .TyperWriterHeadline {
+        font-size: 7px;
+
+        &::after {
+            margin-top: 1px;
+        }
+    }
+}
+
+//Tablet 2: Landscape
+@media only screen and (max-width: 1024px) {
+    .btnHomePage {
+        display: block;
+    }
+
+    .bitmojiMe {
+        display: none;
+    }
+
+    .OpenerLines {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Coolvetica';
+        font-weight: 400;
+
+        img {
+            width: 20px;
+            margin-left: 20px;
+            opacity: 0;
+            height: auto;
+            animation: rotateIn 1s linear both;
+            animation-delay: 1.4s;
+        }
+    }
+
+    .TyperWriterHeadline {
+        font-size: 20px;
+
+        &::after {
+            margin-top: 1px;
+        }
+    }
+}
+
+//Laptop: 
+@media only screen and (max-width: 1280px) {
+    .OpenerLines {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+        font-family: 'Coolvetica';
+        font-weight: 400;
+
+        img {
+            width: 20px;
+            animation: rotateIn 1s linear both;
+            animation-delay: 1.4s;
+
+        }
+    }
+
+    .TyperWriterHeadline {
+        font-size: 20px;
+
+        &::after {
+            margin-top: 1px;
+        }
+    }
+}
+
+//Desktop: 
+@media only screen and (max-width: 1536px) {
+    //TODO
+
 }

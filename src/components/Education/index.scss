@@ -1,4 +1,4 @@
-/* src/components/Education/index.scss */
+/* index.scss */
 
 .education-accordion-container {
     position: absolute;
@@ -234,105 +234,121 @@
 }
 
 // /* Responsive Design with Smooth Animations */
-// @media only screen and (max-width: 1200px) {
-//     .edu-page .text-zone {
-//         h1 {
-//             font-size: 50px;
-//         }
-//     }
-    
-//     .education-accordion-container {
-//         left: 45%;
-//         width: 52%;
-//     }
-    
-//     .content-wrapper {
-//         flex-direction: column;
-//     }
-    
-//     .content-left {
-//         flex: 0 0 auto;
-//         width: 100%;
-//     }
-    
-//     .image-container {
-//         height: 180px;
-//     }
-// }
 
-// @media only screen and (max-width: 992px) {
-//     .edu-page .text-zone {
-//         left: 5%;
-//         top: 10%;
-//         transform: none;
-//         width: 90%;
+//Screen Responsiveness
+//Mobile 1:
+@media only screen and (max-width: 480px) {
+    //TODO
+}
+
+//Mobile 2: Landscape
+@media only screen and (max-width: 768px) {
+    .edu-page .text-zone {
+        h1 {
+            font-size: 28px;
+            
+            &:before {
+                font-size: 14px;
+            }
+            
+            &:after {
+                font-size: 14px;
+            }
+        }
+    }
+    
+    .education-accordion-container {
+        top: 22%;
+        max-height: 70vh;
+    }
+    
+    .accordion-header {
+        padding: 1rem;
+    }
+    
+    .header-left {
+        gap: 1rem;
+    }
+    
+    .item-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        min-width: 40px;
+    }
+    
+    .item-title {
+        font-size: 1rem;
+    }
+    
+    .accordion-content.show {
+        padding: 1rem;
+    }
+    
+    .content-wrapper {
+        gap: 1rem;
+    }
+    
+    .description p {
+        font-size: 0.9rem;
+    }
+    
+    .certificate-link {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+//Tablet 2: Landscape
+@media only screen and (max-width: 1024px) {
+    .edu-page .text-zone {
+        left: 5%;
+        top: 10%;
+        transform: none;
+        width: 90%;
         
-//         h1 {
-//             font-size: 50px;
-//         }
-//     }
+        h1 {
+            font-size: 50px;
+        }
+    }
     
-//     .education-accordion-container {
-//         left: 5%;
-//         top: 25%;
-//         width: 90%;
-//         max-height: 65vh;
-//     }
-// }
+    .education-accordion-container {
+        left: 5%;
+        top: 25%;
+        width: 90%;
+        max-height: 65vh;
+    }
+}
 
-// @media only screen and (max-width: 768px) {
-//     .edu-page .text-zone {
-//         h1 {
-//             font-size: 28px;
-            
-//             &:before {
-//                 font-size: 14px;
-//             }
-            
-//             &:after {
-//                 font-size: 14px;
-//             }
-//         }
-//     }
+//Laptop: 
+@media only screen and (max-width: 1280px) {
+    .edu-page .text-zone {
+        h1 {
+            font-size: 50px;
+        }
+    }
     
-//     .education-accordion-container {
-//         top: 22%;
-//         max-height: 70vh;
-//     }
+    .education-accordion-container {
+        left: 45%;
+        width: 52%;
+    }
     
-//     .accordion-header {
-//         padding: 1rem;
-//     }
+    .content-wrapper {
+        flex-direction: column;
+    }
     
-//     .header-left {
-//         gap: 1rem;
-//     }
+    .content-left {
+        flex: 0 0 auto;
+        width: 100%;
+    }
     
-//     .item-number {
-//         width: 40px;
-//         height: 40px;
-//         font-size: 1.2rem;
-//         min-width: 40px;
-//     }
-    
-//     .item-title {
-//         font-size: 1rem;
-//     }
-    
-//     .accordion-content.show {
-//         padding: 1rem;
-//     }
-    
-//     .content-wrapper {
-//         gap: 1rem;
-//     }
-    
-//     .description p {
-//         font-size: 0.9rem;
-//     }
-    
-//     .certificate-link {
-//         font-size: 0.8rem;
-//         padding: 0.6rem 1.2rem;
-//     }
-// }
+    .image-container {
+        height: 180px;
+    }
+}
+
+//Desktop: 
+@media only screen and (max-width: 1536px) {
+    //TODO
+
+}
