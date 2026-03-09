@@ -229,55 +229,51 @@
         display: block;
     }
 
-    // ── Sidebar becomes a slide-in drawer ──
+    // ── Sidebar becomes a slim slide-in drawer (icon-only, matches desktop width) ──
     .nav-bar {
-        width: 200px;
-        top: 56px;           // below the top bar
-        left: -200px;        // hidden off-screen
+        width: 60px;
+        top: 56px;
+        left: -60px;
         z-index: 5;
         transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow: visible;
+        overflow: hidden;
 
-        // Desktop logo hidden on mobile (top bar has its own logo)
         .logo { display: none; }
 
-        // Nav: static flow (not absolute) inside drawer
         nav {
             position: static;
             height: auto;
-            margin-top: 24px;
+            margin-top: 16px;
             width: 100%;
 
             a {
-                font-size: 22px;
-                line-height: 60px;
-                height: 60px;
+                font-size: 20px;
+                line-height: 51px;
+                height: 51px;
 
-                // Show label text always (not just on hover) in drawer
                 &:after {
-                    opacity: 1;
-                    font-size: 11px;
-                    bottom: 8px;
-                    color: #4d4d4e;
+                    opacity: 0;
+                    font-size: 9px;
                 }
 
-                &:hover:after { color: #ffd700; }
+                &:hover {
+                    svg { opacity: 0; }
+                    &:after { opacity: 1; }
+                }
             }
         }
 
-        // Social icons: static at bottom of drawer flow
         ul {
             position: static;
-            margin-top: 32px;
-            padding-bottom: 24px;
+            margin-top: 24px;
+            padding-bottom: 20px;
 
             li a {
-                font-size: 20px;
-                padding: 10px 0;
+                font-size: 15px;
+                padding: 7px 0;
             }
         }
 
-        // Slide in when open
         &.nav-bar--open {
             left: 0;
         }
