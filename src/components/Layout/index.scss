@@ -11,7 +11,7 @@
     opacity: 0.6;
     position: absolute;
     bottom: 0;
-    left: calc(5% + 20px); /* FIXED: Changed from 120px to be responsive with sidebar */
+    left: calc(60px + 20px); /* Sidebar is fixed 60px wide */
     font-size: 18px;
     font-family: 'La Belle Aurore', cursive;
 }
@@ -28,6 +28,48 @@
 
 .bottom-tag-html {
     margin-left: -20px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Page takes full width — no sidebar gap */
+    .page {
+        padding-top: 56px;
+        box-sizing: border-box;
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Tags: remove sidebar offset, sit below top bar */
+    .tags {
+        left: 20px;
+        font-size: 14px;
+    }
+
+    .top-tags {
+        top: 64px;
+        margin-left: 0;
+    }
+
+    /* All page content zones reset to full-width with no sidebar indent */
+    .home-page,
+    .about-page,
+    .contact-page,
+    .projects-page,
+    .edu-page,
+    .jobs-page {
+        .text-zone {
+            left: 5%;
+            width: 90%;
+        }
+    }
+
+    /* Scrollable containers also reset */
+    .container-edu,
+    .container-jobs,
+    .container-projects {
+        left: 0;
+        width: 100%;
+    }
 }
 
 .container-edu,

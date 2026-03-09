@@ -1,28 +1,35 @@
 /* src/components/Sidebar/index.scss */
 
+// ─────────────────────────────────────────
+// Desktop sidebar (> 768px)
+// ─────────────────────────────────────────
 .nav-bar {
     background: #181818;
-    width: 4%;
-    min-height: 100vh; /* Minimum full viewport height */
-    height: 100%; /* Take parent's height if taller */
-    position: fixed; /* Fixed to viewport */
+    width: 60px;
+    min-height: 100vh;
+    height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-    bottom: 0; /* CRITICAL: Forces extension to bottom */
+    bottom: 0;
     z-index: 3;
+    overflow: hidden;
+    box-sizing: border-box;
+
     .logo {
         display: block;
         padding: 8px 0;
         img {
             display: block;
             margin: 8px auto;
-            width: 52px;
+            width: 44px;
             height: auto;
             &.sub-logo {
-                width: 70px;
+                width: 50px;
             }
         }
     }
+
     nav {
         display: block;
         text-align: center;
@@ -31,6 +38,7 @@
         top: 45%;
         margin-top: -120px;
         width: 100%;
+
         a {
             font-size: 20px;
             color: #4d4d4e;
@@ -39,18 +47,17 @@
             height: 51px;
             position: relative;
             text-decoration: none;
+
             i {
                 transition: all 0.3s ease-out;
             }
+
             &:hover {
                 color: #ffd700;
-                svg {
-                    opacity: 0;
-                }
-                &:after {
-                    opacity: 1;
-                }
+                svg { opacity: 0; }
+                &:after { opacity: 1; }
             }
+
             &:after {
                 content: '';
                 font-size: 9px;
@@ -64,48 +71,20 @@
                 -webkit-transition: all 0.3s ease-out;
                 transition: all 0.3s ease-out;
             }
-            &:first-child {
-                &:after {
-                    content: 'HOME';
-                }
-            }
+
+            &:first-child:after { content: 'HOME'; }
         }
-        a.about-link {
-            &:after {
-                content: 'ABOUT';
-            }
-        }
-        a.proj-link {
-            &:after {
-                content: 'DEV';
-            }
-        }
-        a.edu-link {
-            &:after {
-                content: 'EDUCATION';
-            }
-        }
-        a.eng-link {
-            &:after {
-                content: 'PROJECTS';
-            }
-        }
-        a.jobs-link {
-            &:after {
-                content: 'JOBS';
-            }
-        }
-        a.contact-link {
-            &:after {
-                content: 'CONTACT';
-            }
-        }
-        a.active {
-            svg {
-                color: #ffd700;
-            }
-        }
+
+        a.about-link:after   { content: 'ABOUT'; }
+        a.proj-link:after    { content: 'DEV'; }
+        a.edu-link:after     { content: 'EDUCATION'; }
+        a.eng-link:after     { content: 'PROJECTS'; }
+        a.jobs-link:after    { content: 'JOBS'; }
+        a.contact-link:after { content: 'CONTACT'; }
+
+        a.active svg { color: #ffd700; }
     }
+
     ul {
         position: absolute;
         bottom: 20px;
@@ -115,6 +94,7 @@
         list-style: none;
         text-align: center;
         margin: 0;
+
         li {
             a {
                 padding: 7px 0;
@@ -123,61 +103,183 @@
                 line-height: 16px;
                 color: #4d4d4e;
             }
-            &:hover {
-                .anchor-icon {
-                    color: #ffd700;
-                }
+            &:hover .anchor-icon { color: #ffd700; }
+        }
+    }
+}
+
+// ─────────────────────────────────────────
+// Mobile top bar  (≤ 768px)
+// ─────────────────────────────────────────
+.mobile-top-bar {
+    display: none; // hidden on desktop
+}
+
+// ─────────────────────────────────────────
+// Backdrop
+// ─────────────────────────────────────────
+.nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.visible {
+        opacity: 1;
+    }
+}
+
+// ─────────────────────────────────────────
+// Mobile breakpoint  (≤ 768px)
+// ─────────────────────────────────────────
+@media only screen and (max-width: 768px) {
+
+    // ── Top bar ──
+    .mobile-top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background: #181818;
+        padding: 0 16px;
+        z-index: 6; // above drawer and backdrop
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+        .mobile-logo {
+            display: flex;
+            align-items: center;
+            img {
+                width: 36px;
+                height: auto;
             }
         }
     }
 
-    // @media only screen and (max-width: 1010px) {
-    //     .logo{
-    //         img{
-    //             display: block;
-    //             margin: 6px auto;
-    //             width: 20px;
-    //             height: auto;
-    //             &.sub-logo {
-    //                 display: none;
-    //             }    
-    //         }
-    //     }
-    // }
-}
+    // ── Waffle button ──
+    .waffle-btn {
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        border-radius: 6px;
+        transition: background 0.2s ease;
 
-// @media only screen and (min-width: 1950px) {
-//     .nav-bar {
-//         min-width: 100px; /* Prevents sidebar from becoming too narrow */
-//     }
-// }
+        &:hover {
+            background: rgba(255, 215, 0, 0.08);
+        }
 
-//Screen Responsiveness
-//Mobile 1:
-@media only screen and (max-width: 480px) {
-    //TODO
-}
+        // Grid visible by default
+        .waffle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 6px);
+            grid-template-rows: repeat(3, 6px);
+            gap: 3px;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
 
-//Mobile 2: Landscape
-@media only screen and (max-width: 768px) {
-    //TODO
+        .waffle-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 1px;
+            background: #4d4d4e;
+            transition: background 0.2s ease;
+        }
 
-}
+        // X icon hidden by default
+        .waffle-close {
+            position: absolute;
+            font-size: 18px;
+            color: #ffd700;
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.6);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
 
-//Tablet 2: Landscape
-@media only screen and (max-width: 1024px) {
-    //TODO
+        // When open: hide grid, show X
+        &.open {
+            .waffle-grid {
+                opacity: 0;
+                transform: scale(0.6);
+            }
+            .waffle-dot {
+                background: #ffd700;
+            }
+            .waffle-close {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+    }
 
-}
+    // ── Backdrop ──
+    .nav-backdrop {
+        display: block;
+    }
 
-//Laptop: 
-@media only screen and (max-width: 1280px) {
-    //TODO
+    // ── Sidebar becomes a slide-in drawer ──
+    .nav-bar {
+        width: 200px;
+        top: 56px;           // below the top bar
+        left: -200px;        // hidden off-screen
+        z-index: 5;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: visible;
 
-}
+        // Desktop logo hidden on mobile (top bar has its own logo)
+        .logo { display: none; }
 
-//Desktop: 
-@media only screen and (max-width: 1536px) {
-    //TODO
+        // Nav: static flow (not absolute) inside drawer
+        nav {
+            position: static;
+            height: auto;
+            margin-top: 24px;
+            width: 100%;
 
+            a {
+                font-size: 22px;
+                line-height: 60px;
+                height: 60px;
+
+                // Show label text always (not just on hover) in drawer
+                &:after {
+                    opacity: 1;
+                    font-size: 11px;
+                    bottom: 8px;
+                    color: #4d4d4e;
+                }
+
+                &:hover:after { color: #ffd700; }
+            }
+        }
+
+        // Social icons: static at bottom of drawer flow
+        ul {
+            position: static;
+            margin-top: 32px;
+            padding-bottom: 24px;
+
+            li a {
+                font-size: 20px;
+                padding: 10px 0;
+            }
+        }
+
+        // Slide in when open
+        &.nav-bar--open {
+            left: 0;
+        }
+    }
 }
