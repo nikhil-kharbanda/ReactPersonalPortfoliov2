@@ -16,12 +16,22 @@
     animation-fill-mode: both;
     &:hover {
         animation: rubberBand 1s;
-        color: #ffd700;
+        color: var(--color-accent-gold);
     }
 }
 
 @for $i from 1 through 35 {
     .text-animate._#{$i} {
         animation-delay: #{$i / 10}s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .text-animate {
+        animation: none;
+        opacity: 1;
+    }
+    .text-animate-hover:hover {
+        animation: none;
     }
 }

@@ -1,0 +1,267 @@
+/* src/components/Hero/index.scss */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        max-height: 90%;
+    }
+    .OpenerLines {
+        color: var(--color-text);
+        font-size: 45px;
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 400;
+        &::before {
+            content: '<h1>';
+            font-family: var(--font-script);
+            color: var(--color-accent-gold);
+            font-size: 18px;
+            position: absolute;
+            margin-top: -40px;
+            left: 0px;
+            opacity: 0.6;
+        }
+        img {
+            width: 40px;
+            margin-left: 20px;
+            opacity: 0;
+            height: auto;
+            animation: rotateIn 1s linear both;
+            animation-delay: 1.4s;
+        }
+    }
+
+    .TyperWriterHeadline {
+        color: var(--color-text);
+        font-size: 30px;
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 400;
+        &::after {
+            content: '</h1>';
+            font-family: var(--font-script);
+            color: var(--color-accent-gold);
+            font-size: 18px;
+            position: absolute;
+            margin-top: 7px;
+            margin-left: 0px;
+            animation: fadeIn 1s 1.7s backwards;
+            opacity: 0.6;
+        }
+    }
+
+    h2 {
+        color: var(--color-text-muted);
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 20px;
+        font-family: var(--font-body);
+        letter-spacing: 3px;
+        animation: fadeIn 1s 1.8s backwards;
+    }
+    .flat-button {
+        color: var(--color-accent-gold);
+        font-size: 13px;
+        letter-spacing: 4px;
+        font-family: var(--font-body);
+        text-decoration: none;
+        padding: 10px 10px;
+        border: 1px solid var(--color-accent-gold);
+        margin-top: 25px;
+        float: left;
+        animation: fadeIn 1s 1.8s backwards;
+        white-space: nowrap;
+        &:hover {
+            background: var(--color-accent-gold);
+            color: var(--color-bg);
+        }
+    }
+    .resume-btn {
+        color: var(--color-accent-gold);
+        font-size: 13px;
+        letter-spacing: 4px;
+        font-family: var(--font-body);
+        text-decoration: none;
+        padding: 10px 10px;
+        border: 1px solid var(--color-accent-gold);
+        margin-top: 25px;
+        float: left;
+        animation: fadeIn 1s 1.8s backwards;
+        white-space: nowrap;
+        margin-left: 50px;
+        &:hover {
+            background: var(--color-accent-gold);
+            color: var(--color-bg);
+        }
+    }
+
+    .btnHomePage {
+        display: inline;
+    }
+}
+
+//Screen Responsiveness
+//Mobile 1:
+@media only screen and (max-width: 480px) {
+    .hero-section {
+        .text-zone {
+            left: 5%;
+            width: 90%;
+        }
+
+        .btnHomePage {
+            display: block;
+        }
+
+        .bitmojiMe {
+            display: none;
+        }
+
+        .OpenerLines {
+            color: var(--color-text);
+            font-size: 20px;
+            margin: 0;
+            font-family: var(--font-display);
+            font-weight: 400;
+
+            img {
+                width: 10px;
+                margin-left: 20px;
+                opacity: 0;
+                height: auto;
+                animation: rotateIn 1s linear both;
+                animation-delay: 1.4s;
+            }
+        }
+
+        .TyperWriterHeadline {
+            font-size: 7px;
+
+            &::after {
+                margin-top: 1px;
+            }
+        }
+    }
+}
+
+//Mobile 2: Landscape
+@media only screen and (max-width: 768px) {
+    .hero-section {
+        .btnHomePage {
+            display: block;
+        }
+
+        .text-zone {
+            left: 5%;
+            width: 90%;
+        }
+
+        .bitmojiMe {
+            display: none;
+        }
+
+        .OpenerLines {
+            color: var(--color-text);
+            font-size: 30px;
+            margin: 0;
+            font-family: var(--font-display);
+            font-weight: 400;
+
+            img {
+                width: 20px;
+                margin-left: 20px;
+                opacity: 0;
+                height: auto;
+                animation: rotateIn 1s linear both;
+                animation-delay: 1.4s;
+            }
+        }
+
+        .TyperWriterHeadline {
+            font-size: 7px;
+
+            &::after {
+                margin-top: 1px;
+            }
+        }
+    }
+}
+
+//Tablet 2: Landscape
+@media only screen and (max-width: 1024px) {
+    .hero-section {
+        .text-zone {
+            left: 5%;
+            width: 90%;
+        }
+
+        .btnHomePage {
+            display: block;
+        }
+
+        .bitmojiMe {
+            display: none;
+        }
+
+        .OpenerLines {
+            color: var(--color-text);
+            font-size: 30px;
+            margin: 0;
+            font-family: var(--font-display);
+            font-weight: 400;
+
+            img {
+                width: 20px;
+                margin-left: 20px;
+                opacity: 0;
+                height: auto;
+                animation: rotateIn 1s linear both;
+                animation-delay: 1.4s;
+            }
+        }
+
+        .TyperWriterHeadline {
+            font-size: 20px;
+
+            &::after {
+                margin-top: 1px;
+            }
+        }
+    }
+}
+
+//Laptop:
+@media only screen and (max-width: 1280px) {
+    .hero-section {
+        .OpenerLines {
+            color: var(--color-text);
+            font-size: 30px;
+            margin: 0;
+            font-family: var(--font-display);
+            font-weight: 400;
+
+            img {
+                width: 20px;
+                animation: rotateIn 1s linear both;
+                animation-delay: 1.4s;
+            }
+        }
+
+        .TyperWriterHeadline {
+            font-size: 20px;
+
+            &::after {
+                margin-top: 1px;
+            }
+        }
+    }
+}

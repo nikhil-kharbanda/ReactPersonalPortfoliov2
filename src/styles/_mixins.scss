@@ -1,0 +1,7 @@
+/* src/styles/_mixins.scss */
+
+@mixin reduced-motion {
+    @media (prefers-reduced-motion: reduce) {
+        @content;
+    }
+}

@@ -1,18 +1,23 @@
 // src/components/Sidebar/index.js
 
 import { useState, useEffect } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './index.scss'
 import LogoK from '../../assets/images/logo_new.png'
 import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBriefcase, faEnvelope, faHome, faSchool, faUser, faWrench } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import useScrollSpy from '../../hooks/useScrollSpy'
 
+const CHAPTER_IDS = ['about', 'education', 'experience', 'projects-preview', 'contact-chapter']
 
 const Sidebar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const location = useLocation()
+    const navigate = useNavigate()
+    const isHome = location.pathname === '/'
+    const activeChapter = useScrollSpy(CHAPTER_IDS, '.home-page')
 
     // Close drawer on route change
     useEffect(() => {
@@ -28,6 +33,25 @@ const Sidebar = () => {
         }
         return () => { document.body.style.overflow = '' }
     }, [menuOpen])
+
+    // Scroll to a chapter anchor: if already home, scroll in place; otherwise navigate then scroll
+    const goToChapter = (id) => (e) => {
+        e.preventDefault()
+        if (isHome) {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+            navigate(`/#${id}`)
+        }
+    }
+
+    const goHome = (e) => {
+        e.preventDefault()
+        if (isHome) {
+            document.querySelector('.home-page')?.scrollTo({ top: 0, behavior: 'smooth' })
+        } else {
+            navigate('/')
+        }
+    }
 
     return (
         <>
@@ -70,40 +94,56 @@ const Sidebar = () => {
                 </Link>
 
                 <nav>
-                    <NavLink exact='true' activeclassname='active' to='/'>
-                        <FontAwesomeIcon icon={faHome} color='#4d4d4e' />
-                    </NavLink>
-                    <NavLink exact='true' activeclassname='active' className='about-link' to='/about'>
-                        <FontAwesomeIcon icon={faUser} color='#4d4d4e' />
-                    </NavLink>
-                    <NavLink exact='true' activeclassname='active' className='edu-link' to='/education'>
-                        <FontAwesomeIcon icon={faSchool} color='#4d4d4e' />
-                    </NavLink>
-                    <NavLink exact='true' activeclassname='active' className='jobs-link' to='/previous-jobs'>
-                        <FontAwesomeIcon icon={faBriefcase} color='#4d4d4e' />
-                    </NavLink>
+                    <a
+                        href='/'
+                        className={isHome && !activeChapter ? 'active' : ''}
+                        onClick={goHome}
+                    >
+                        <FontAwesomeIcon icon={faHome} color='var(--color-text-muted)' />
+                    </a>
+                    <a
+                        href='/#about'
+                        className={`about-link${isHome && activeChapter === 'about' ? ' active' : ''}`}
+                        onClick={goToChapter('about')}
+                    >
+                        <FontAwesomeIcon icon={faUser} color='var(--color-text-muted)' />
+                    </a>
+                    <a
+                        href='/#education'
+                        className={`edu-link${isHome && activeChapter === 'education' ? ' active' : ''}`}
+                        onClick={goToChapter('education')}
+                    >
+                        <FontAwesomeIcon icon={faSchool} color='var(--color-text-muted)' />
+                    </a>
+                    <a
+                        href='/#experience'
+                        className={`jobs-link${isHome && activeChapter === 'experience' ? ' active' : ''}`}
+                        onClick={goToChapter('experience')}
+                    >
+                        <FontAwesomeIcon icon={faBriefcase} color='var(--color-text-muted)' />
+                    </a>
                     <NavLink exact='true' activeclassname='active' className='eng-link' to='/projects'>
-                        <FontAwesomeIcon icon={faWrench} color='#4d4d4e' />
+                        <FontAwesomeIcon icon={faWrench} color='var(--color-text-muted)' />
                     </NavLink>
                     <NavLink exact='true' activeclassname='active' className='contact-link' to='/contact'>
-                        <FontAwesomeIcon icon={faEnvelope} color='#4d4d4e' />
+                        <FontAwesomeIcon icon={faEnvelope} color='var(--color-text-muted)' />
                     </NavLink>
                 </nav>
 
                 <ul>
                     <li>
                         <a target='blank' rel='noreferrer' href='https://www.linkedin.com/in/nikhil-kharbanda/'>
-                            <FontAwesomeIcon icon={faLinkedin} color='#4d4d4e' />
+                            <FontAwesomeIcon icon={faLinkedin} color='var(--color-text-muted)' />
                         </a>
                     </li>
                     <li>
                         <a target='blank' rel='noreferrer' href='https://github.com/nikhil-kharbanda'>
-                            <FontAwesomeIcon icon={faGithub} color='#4d4d4e' />
+                            <FontAwesomeIcon icon={faGithub} color='var(--color-text-muted)' />
                         </a>
                     </li>
                     <li>
                         <a target='blank' rel='noreferrer' href='https://www.instagram.com/nik22cool'>
-                            <FontAwesomeIcon icon={faInstagram} color='#4d4d4e' />
+                            <FontAwesomeIcon icon={faInstagram} color='var(--color-text-muted)' />
                         </a>
                     </li>
                 </ul>

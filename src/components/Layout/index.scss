@@ -7,13 +7,13 @@
 }
 
 .tags {
-    color: #ffd700;
+    color: var(--color-accent-gold);
     opacity: 0.6;
     position: absolute;
     bottom: 0;
     left: calc(60px + 20px); /* Sidebar is fixed 60px wide */
     font-size: 18px;
-    font-family: 'La Belle Aurore', cursive;
+    font-family: var(--font-script);
 }
 
 .top-tags {
@@ -55,6 +55,7 @@
     .about-page,
     .contact-page,
     .projects-page,
+    .project-detail-page,
     .edu-page,
     .jobs-page {
         .text-zone {
@@ -66,7 +67,8 @@
     /* Scrollable containers also reset */
     .container-edu,
     .container-jobs,
-    .container-projects {
+    .container-projects,
+    .container-project-detail {
         left: 0;
         width: 100%;
     }
@@ -74,7 +76,9 @@
 
 .container-edu,
 .container-jobs,
-.container-projects {
+.container-projects,
+.container-project-detail,
+.container-not-found {
     width: 100%;
     will-change: contents;
     height: 100%;
@@ -92,6 +96,8 @@
 .about-page,
 .contact-page,
 .projects-page,
+.project-detail-page,
+.not-found-page,
 .edu-page,
 .jobs-page {
     .text-zone {
@@ -107,8 +113,8 @@
 
         h1 {
             font-size: 70px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
+            font-family: var(--font-display);
+            color: var(--color-accent-gold);
             font-weight: 400;
             margin-top: 0;
             position: relative;
@@ -118,8 +124,8 @@
 
             &:before {
                 content: '<h1>';
-                font-family: 'La Belle Aurore', cursive;
-                color: #ffd700;
+                font-family: var(--font-script);
+                color: var(--color-accent-gold);
                 font-size: 18px;
                 position: absolute;
                 margin-top: -10px;
@@ -129,8 +135,8 @@
             }
             &:after {
                 content: '<h1/>';
-                font-family: 'La Belle Aurore', cursive;
-                color: #ffd700;
+                font-family: var(--font-script);
+                color: var(--color-accent-gold);
                 font-size: 18px;
                 line-height: 18px;
                 position: absolute;
@@ -141,11 +147,11 @@
             }
         }
         .subtitle {
-            color: #8d8d8d;
+            color: var(--color-text-muted);
             font-size: 2.2rem;
             padding-left: 10px;
 
-            font-family: 'Coolvetica';
+            font-family: var(--font-display);
             font-weight: 400;
             margin-top: 10px;
             position: relative;
@@ -156,8 +162,8 @@
             
         p {
             font-size: 1.5rem;
-            color: #fff;
-            font-family: sans-serif;
+            color: var(--color-text);
+            font-family: var(--font-body);
             font-weight: 300;
             max-width: fit-content;
             animation: pulse 1s;
@@ -174,7 +180,7 @@
         }
         .text-animate-hover {
             &:hover {
-                color: #fff;
+                color: var(--color-text);
             }
         }
     }
@@ -182,8 +188,8 @@
 
 .item-title {
     font-size: 2.2rem;
-    font-family: 'Coolvetica', sans-serif;
-    color: #ffd700;
+    font-family: var(--font-display);
+    color: var(--color-accent-gold);
     margin: 0 0 1rem 0;
     transition: color 0.3s ease, 
                 font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -191,16 +197,16 @@
 
 .secondary-title {
     font-size: 1.65rem;
-    color: #fff;
+    color: var(--color-text);
     margin: 0 0 0.75rem 0;
-    font-family: sans-serif;
+    font-family: var(--font-body);
     font-weight: 300;
 }
 
 .description {
         font-size: 1.5rem;
-        color: #fff;
-        font-family: sans-serif;
+        color: var(--color-text);
+        font-family: var(--font-body);
         line-height: 1.6;
         margin: 0 0 1rem 0;
         transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -215,8 +221,8 @@
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 10px;
     font-size: 1.2rem;
-    color: #ffd700;
-    font-family: 'Coolvetica', sans-serif;
+    color: var(--color-accent-gold);
+    font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -226,11 +232,11 @@
     align-items: center;
     gap: 0.35rem;
     font-size: 1.2rem;
-    color: #8d8d8d;
-    font-family: sans-serif;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
     
     svg {
-        color: #ffd700;
+        color: var(--color-accent-gold);
         font-size: 0.8rem;
     }
 }
@@ -241,10 +247,10 @@
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     background: transparent;
-    border: 2px solid #ffd700;
-    color: #ffd700;
+    border: 2px solid var(--color-accent-gold);
+    color: var(--color-accent-gold);
     text-decoration: none;
-    font-family: 'Coolvetica', sans-serif;
+    font-family: var(--font-display);
     font-size: 0.9rem;
     letter-spacing: 1px;
     border-radius: 4px;
@@ -255,8 +261,8 @@
                 font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
     &:hover {
-        background: #ffd700;
-        color: #022c43;
+        background: var(--color-accent-gold);
+        color: var(--color-bg);
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         
@@ -280,8 +286,8 @@
     
     h4 {
         font-size: 1.37rem;
-        color: #ffd700;
-        font-family: 'Coolvetica', sans-serif;
+        color: var(--color-accent-gold);
+        font-family: var(--font-display);
         margin: 0 0 0.75rem 0;
         display: flex;
         align-items: center;
@@ -298,8 +304,8 @@
         margin: 0;
         
         li {
-            color: #fff;
-            font-family: sans-serif;
+            color: var(--color-text);
+            font-family: var(--font-body);
             font-size: 1.25rem;
             line-height: 1.5;
             margin-bottom: 0.5rem;
@@ -308,7 +314,7 @@
             
             &:before {
                 content: '▸';
-                color: #ffd700;
+                color: var(--color-accent-gold);
                 position: absolute;
                 left: 0;
                 font-weight: bold;
@@ -328,16 +334,16 @@
     background: rgba(255, 215, 0, 0.1);
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 4px;
-    color: #ffd700;
+    color: var(--color-accent-gold);
     font-size: 1.2rem;
-    font-family: 'Coolvetica', sans-serif;
+    font-family: var(--font-display);
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     
     &:hover {
         background: rgba(255, 215, 0, 0.2);
-        border-color: #ffd700;
+        border-color: var(--color-accent-gold);
         
     }
 }
@@ -352,8 +358,8 @@
 //         .text-zone {
 //             h1 {
 //                 font-size: 35px;
-//                 font-family: 'Coolvetica';
-//                 color: #ffd700;
+//                 font-family: var(--font-display);
+//                 color: var(--color-accent-gold);
 //                 font-weight: 400;
 //                 margin-top: 0;
 //                 position: relative;
@@ -367,8 +373,8 @@
 //                 margin-bottom: 40px;
 //                 left: 10px;
 //                 font-size: 2.2rem;
-//                 font-family: 'Coolvetica', sans-serif;
-//                 color: #fff;
+//                 font-family: var(--font-display);
+//                 color: var(--color-text);
 //                 margin: 0;
 //                 font-weight: 400;
 //                 transition: color 0.3s ease, 
@@ -378,8 +384,8 @@
 
 //             p {
 //                 font-size: 1.55rem;
-//                 color: #fff;
-//                 font-family: sans-serif;
+//                 color: var(--color-text);
+//                 font-family: var(--font-body);
 //                 font-weight: 300;
 //                 max-width: fit-content;
 //                 animation: pulse 1s;

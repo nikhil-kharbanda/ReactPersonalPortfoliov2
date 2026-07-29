@@ -1,0 +1,227 @@
+/* src/components/Home/chapters/ExperienceChapter/index.scss */
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 215, 0, 0.3) 5%,
+        rgba(255, 215, 0, 0.3) 95%,
+        transparent
+    );
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--space-xl);
+    opacity: 0;
+    animation: fadeInSlide 0.8s ease forwards;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.dot-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    border: 3px solid var(--color-accent-gold);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all var(--duration-base) ease;
+
+    svg {
+        color: var(--color-accent-gold);
+        font-size: 1rem;
+    }
+
+    .timeline-item:hover & {
+        background: var(--color-accent-gold);
+
+        svg {
+            color: var(--color-bg);
+        }
+    }
+}
+
+.dot-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-full);
+    background: rgba(255, 215, 0, 0.4);
+    animation: pulse 2s ease-out infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.timeline-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--duration-base) ease;
+
+    &:hover {
+        border-color: rgba(255, 215, 0, 0.6);
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .timeline-item.expanded & {
+        border-color: var(--color-accent-gold);
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.card-header {
+    padding: var(--space-lg);
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    background: rgba(255, 215, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.company-logo {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: var(--space-sm);
+    }
+}
+
+.logo-fallback svg {
+    font-size: 1.6rem;
+    color: rgba(255, 215, 0, 0.4);
+}
+
+.header-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.job-meta-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.type-badge {
+    &.fulltime {
+        background: rgba(34, 197, 94, 0.1);
+        border-color: rgba(34, 197, 94, 0.3);
+        color: #22c55e;
+    }
+    &.parttime {
+        background: rgba(100, 150, 255, 0.1);
+        border-color: rgba(100, 150, 255, 0.3);
+        color: #6496ff;
+    }
+    &.internship {
+        background: rgba(255, 100, 200, 0.1);
+        border-color: rgba(255, 100, 200, 0.3);
+        color: #ff64c8;
+    }
+}
+
+.card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+
+    &.show {
+        max-height: 1000px;
+        padding: var(--space-lg);
+    }
+}
+
+.expand-indicator {
+    padding: var(--space-sm) var(--space-lg);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    background: rgba(255, 215, 0, 0.03);
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all var(--duration-base) ease;
+
+    .timeline-card:hover & {
+        color: var(--color-accent-gold);
+        background: rgba(255, 215, 0, 0.08);
+    }
+}
+
+.timeline-end {
+    text-align: center;
+    padding: var(--space-lg) 0;
+}
+
+.end-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent-gold);
+    border-radius: var(--radius-full);
+    margin: 0 auto var(--space-md) auto;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+}
+
+.end-text {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-family: var(--font-display);
+    font-style: italic;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+    }
+}

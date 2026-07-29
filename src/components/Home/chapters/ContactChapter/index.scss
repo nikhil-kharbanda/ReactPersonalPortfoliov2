@@ -1,0 +1,22 @@
+/* src/components/Home/chapters/ContactChapter/index.scss */
+
+.contact-chapter {
+    max-width: 600px;
+}
+
+.contact-info {
+    margin-top: var(--space-lg);
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    clear: both;
+
+    a {
+        color: var(--color-accent-gold);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

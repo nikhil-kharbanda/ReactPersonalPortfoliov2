@@ -1,83 +1,54 @@
 /* src/components/Home/index.js */
 
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../assets/images/logo-n.png'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import Loader from 'react-loaders'
+import Hero from '../Hero'
+import Chapter from '../Chapter'
+import AboutChapter from './chapters/AboutChapter'
+import EducationChapter from './chapters/EducationChapter'
+import ExperienceChapter from './chapters/ExperienceChapter'
+import ProjectsPreviewChapter from './chapters/ProjectsPreviewChapter'
+import ContactChapter from './chapters/ContactChapter'
 import './index.scss'
-import Logo from './Logo';
-import Loader from 'react-loaders';
-import Resume from '../../assets/docs/Nikhil_Kharbanda-Resume.pdf'
-import { Typewriter } from 'react-simple-typewriter'
 
 const Home = () => {
-
-
-    const [letterClass, setLetterClass] = useState('text-animate')
-
-    const nameArray = ['i', 'k', 'h', 'i', 'l', ' ', 'K','h','a','r','b','a','n','d','a']
-    const Job1 = 'Computer Systems Engineer'
-    const Job2 = 'Full-Stack Developer'
+    const location = useLocation()
 
     useEffect(() => {
-        let timeout;
-        timeout = setTimeout(() => {
-            setLetterClass("text-animate-hover");
-        }, 4000);
-        return () => {
-            clearTimeout(timeout);
-        };
-    },
-        []);
+        if (!location.hash) {
+            return
+        }
+        const id = location.hash.replace('#', '')
+        const el = document.getElementById(id)
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+    }, [location.hash])
 
     return (
         <>
-            <div className="container home-page">
-                <div className="text-zone">
-                    <h1>
-                        <span className='OpenerLines'>
-                        <span className={letterClass}>H</span>
-                        <span className={`${letterClass} _12`}>i,</span>
-                        <br />
-                        <span className={`${letterClass} _13`}>I</span>
-                        <span className={`${letterClass} _14`}>'m</span>
-                        <img src={LogoTitle} alt="developer" />
-                        <AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={nameArray}
-                            idx={15}
-                        />
-                        <br />
-                        </span>
-                        
-                        <span className='TyperWriterHeadline'>
-                        <Typewriter
-                            loop="true"
-                            cursor
-                            words={[Job1, Job2]}
-                            animation-delay={1500}
-                            delaySpeed={2000}
-                            deleteSpeed={100}
-                        />
-                        </span>
-
-                    </h1>
-                    <Link to="/contact" className="flat-button btnHomePage">CONTACT ME</Link>
-                    <a
-                        href={Resume}
-                        download="NikhilKharbanda-Resume"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <div className='resume-btn btnHomePage'>DOWNLOAD MY RESUME</div>
-                    </a>
-                </div>
-                <Logo className='bitmojiMe'/>
+            <div className='home-page'>
+                <Hero />
+                <Chapter number={1} title='About' id='about'>
+                    <AboutChapter />
+                </Chapter>
+                <Chapter number={2} title='Education' id='education'>
+                    <EducationChapter />
+                </Chapter>
+                <Chapter number={3} title='Experience' id='experience'>
+                    <ExperienceChapter />
+                </Chapter>
+                <Chapter number={4} title='Projects' id='projects-preview'>
+                    <ProjectsPreviewChapter />
+                </Chapter>
+                <Chapter number={5} title='Contact' id='contact-chapter'>
+                    <ContactChapter />
+                </Chapter>
             </div>
             <Loader type='pacman' />
         </>
-    );
-
+    )
 }
 
-export default Home;
+export default Home

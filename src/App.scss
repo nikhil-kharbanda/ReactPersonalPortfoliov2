@@ -1,6 +1,7 @@
 /* src/App.scss */
 
-$primary-color: #ffd700;
+@import 'styles/tokens';
+@import 'styles/mixins';
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
 @font-face {
@@ -26,7 +27,7 @@ $primary-color: #ffd700;
 
 input,
 textarea {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: var(--font-body);
 }
 
 .loader-active {
@@ -48,4 +49,6 @@ textarea {
     min-height: 100vh;
     height: 100%;
     position: relative;
+    background: var(--color-bg);
+    color: var(--color-text);
 }

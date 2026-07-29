@@ -1,0 +1,39 @@
+/* src/components/ProjectDetail/index.scss */
+
+.project-detail-page {
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-family: var(--font-body);
+        font-size: 1.3rem;
+        margin-bottom: var(--space-md);
+        transition: color var(--duration-base) var(--ease-standard);
+
+        &:hover {
+            color: var(--color-accent-gold);
+        }
+    }
+
+    .detail-image {
+        display: block;
+        width: 100%;
+        max-width: 480px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--color-border);
+        margin: var(--space-md) 0;
+    }
+
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        margin-top: var(--space-md);
+    }
+
+    &.not-found .text-zone {
+        top: 50%;
+    }
+}

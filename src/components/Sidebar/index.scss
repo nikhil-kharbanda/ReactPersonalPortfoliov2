@@ -4,7 +4,7 @@
 // Desktop sidebar (> 768px)
 // ─────────────────────────────────────────
 .nav-bar {
-    background: #181818;
+    background: var(--color-bg-elevated);
     width: 60px;
     min-height: 100vh;
     height: 100%;
@@ -41,7 +41,7 @@
 
         a {
             font-size: 20px;
-            color: #4d4d4e;
+            color: var(--color-text-muted);
             display: block;
             line-height: 51px;
             height: 51px;
@@ -53,7 +53,7 @@
             }
 
             &:hover {
-                color: #ffd700;
+                color: var(--color-accent-gold);
                 svg { opacity: 0; }
                 &:after { opacity: 1; }
             }
@@ -82,7 +82,7 @@
         a.jobs-link:after    { content: 'JOBS'; }
         a.contact-link:after { content: 'CONTACT'; }
 
-        a.active svg { color: #ffd700; }
+        a.active svg { color: var(--color-accent-gold); }
     }
 
     ul {
@@ -101,9 +101,9 @@
                 display: block;
                 font-size: 15px;
                 line-height: 16px;
-                color: #4d4d4e;
+                color: var(--color-text-muted);
             }
-            &:hover .anchor-icon { color: #ffd700; }
+            &:hover .anchor-icon { color: var(--color-accent-gold); }
         }
     }
 }
@@ -147,7 +147,7 @@
         left: 0;
         right: 0;
         height: 56px;
-        background: #181818;
+        background: var(--color-bg-elevated);
         padding: 0 16px;
         z-index: 6; // above drawer and backdrop
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -194,7 +194,7 @@
             width: 6px;
             height: 6px;
             border-radius: 1px;
-            background: #4d4d4e;
+            background: var(--color-text-muted);
             transition: background 0.2s ease;
         }
 
@@ -202,7 +202,7 @@
         .waffle-close {
             position: absolute;
             font-size: 18px;
-            color: #ffd700;
+            color: var(--color-accent-gold);
             opacity: 0;
             transform: rotate(-90deg) scale(0.6);
             transition: opacity 0.2s ease, transform 0.2s ease;
@@ -215,7 +215,7 @@
                 transform: scale(0.6);
             }
             .waffle-dot {
-                background: #ffd700;
+                background: var(--color-accent-gold);
             }
             .waffle-close {
                 opacity: 1;

@@ -1,6 +1,7 @@
 /* src/components/Projects/index.js */
 
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import './index.scss'
@@ -130,7 +131,9 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="project-content">
-                  <h3 className="item-title">{project.name}</h3>
+                  <h3 className="item-title">
+                    <Link to={`/projects/${project.slug}`}>{project.name}</Link>
+                  </h3>
                   <p className="description">{project.description}</p>
                   {project.techStack && project.techStack.length > 0 && (
                     <div className="tech-stack">
